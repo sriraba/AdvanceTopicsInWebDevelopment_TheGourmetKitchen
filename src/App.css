@@ -1,0 +1,28 @@
+.App-logo {
+  height: 8vmin;
+  pointer-events: none;
+}
+
+.header {
+  background-color: #4e888f;
+}
+
+.footer {
+  background-color: #4e888f;
+}
+
+.Appbar-link {
+  color: white;
+  text-decoration: none;
+}
+
+.gridImages {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: '10px';
+  padding: '10px';
+}
+
+.perImage {
+  width: '100%';
+}
