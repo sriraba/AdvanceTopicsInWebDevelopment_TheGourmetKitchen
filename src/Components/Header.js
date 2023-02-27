@@ -28,7 +28,7 @@ const Header = () => {
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>
-                                        <Dropdown.Item href="">Profile</Dropdown.Item>
+                                        <Dropdown.Item href="/profile">Profile</Dropdown.Item>
                                         <Dropdown.Item href="">Settings</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
