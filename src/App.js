@@ -9,21 +9,25 @@ import {Profile} from './Components/Profile';
 import {Login} from './Components/Login';
 import {ForgotPassword} from './Components/ForgotPassword';
 import {EditProfile} from './Components/EditProfile';
-
-
+import MenuHomePage from './Components/Display_Menu/MenuHomePage';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 
 function App() {
   return (
     <BrowserRouter>
+    <Header/>
       <Routes>
         <Route path="/description" element={<Description />} />
         <Route path="/" element={<Login/>} />        
-        <Route path="/home" element={<Home/>} />
+        <Route path="/home" element={<MenuHomePage/>} />
+        {/* <Route path="/home" element={<MenuHomePage/>} /> */}
         <Route path="/signup" element={<Signup/>} />
         <Route path="/profile" element={<Profile/>} />
         <Route path="/ForgotPassword" element={<ForgotPassword/>} />
         <Route path="/editProfile" element={<EditProfile/>} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }
