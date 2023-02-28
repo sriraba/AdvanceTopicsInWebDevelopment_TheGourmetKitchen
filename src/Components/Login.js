@@ -40,7 +40,7 @@ const Login = () => {
         event.preventDefault();
 
         if (email === 'ramya@gmail.com' && password === 'Qwer!234') {
-            navigatePage('/description')
+            navigatePage('/home')
         }
         else {
             alert("Please provide valid details");
