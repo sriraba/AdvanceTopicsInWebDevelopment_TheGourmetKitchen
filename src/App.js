@@ -10,6 +10,7 @@ import { ForgotPassword } from './Components/ForgotPassword';
 import { EditProfile } from './Components/EditProfile';
 import MenuHomePage from './Components/Display_Menu/MenuHomePage';
 import AppointmentForm from './Components/AppointmentForm';
+import Cart from './Components/Cart';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/ForgotPassword" element={<ForgotPassword />} />
         <Route path="/editProfile" element={<EditProfile />} />
         <Route path="/appointmentform" element={<AppointmentForm />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );

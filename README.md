@@ -2,7 +2,7 @@
 ## _Project Proposal_
 
 ```sh
-Aneri Shah - B00912616 (Ratings & Review feature)
+Aneri Shah - B00912616 (Description, Ratings & Review, Add to Cart (Layout Design))
 Purvisha Patel - B00912611 (Display Menu)
 Dhruvit Raval - B00902291 (Appointment Booking)
 Sri Ramya Basam - B00900307 (User Management)
@@ -40,3 +40,4 @@ Sri Ramya Basam - B00900307 (User Management)
 | material Icons | To post icons on the page |
 | Rating | For the review rating  |
 | Date Picker | For the date calendar |
+| Badge | To add notification effect on Icons |

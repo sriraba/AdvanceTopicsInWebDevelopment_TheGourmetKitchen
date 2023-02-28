@@ -1,4 +1,4 @@
-import { AppBar, Box, Grid, Link, TextField, Toolbar, Typography } from '@mui/material'
+import { AppBar, Badge, Box, Grid, Link, Toolbar } from '@mui/material'
 import React from 'react'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Dropdown } from 'react-bootstrap'
@@ -16,7 +16,9 @@ const Header = () => {
                         </Grid>
                         <Grid item>
                             <Dropdown>
-                                <ShoppingCartIcon style={{ backgroundColor: '#4e888f', borderColor: '#4e888f' }} />
+                                <Link href="/cart" style={{ color: '#fff', borderColor: '#4e888f' }}><Badge badgeContent={3} color="secondary">
+                                    <ShoppingCartIcon />
+                                </Badge></Link>
                                 <Dropdown.Toggle style={{ backgroundColor: '#4e888f', borderColor: '#4e888f' }}>
                                     <AccountCircleIcon />
                                 </Dropdown.Toggle>
@@ -24,7 +26,6 @@ const Header = () => {
                                 <Dropdown.Menu>
                                     <Dropdown.Item href="/profile">Profile</Dropdown.Item>
                                     <Dropdown.Item href="/appointmentform">Services</Dropdown.Item>
-                                    <Dropdown.Item href="">Settings</Dropdown.Item>
                                     <Dropdown.Item href="/">Logout</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
