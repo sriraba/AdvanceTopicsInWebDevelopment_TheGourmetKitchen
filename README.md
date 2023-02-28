@@ -27,6 +27,13 @@ Sri Ramya Basam - B00900307 (User Management)
 * [Gitlab](https://reactjs.org/) - 
 * [Netlify](https://mui.com/) - 
 
+```sh
+For Login please enter these credentials:
+
+Username: ramya@gmail.com
+Password: Qwer!234
+```
+
 ### Components Used (along with links)
 | Component | Description |
 | ------ | ------ |
