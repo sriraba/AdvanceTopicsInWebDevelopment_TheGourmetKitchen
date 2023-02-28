@@ -1,4 +1,4 @@
-import { Divider, Grid, IconButton, TextField, Typography } from '@mui/material'
+import { Divider, Grid, IconButton, Typography } from '@mui/material'
 import React from 'react'
 import { Button, Carousel, Col, Container, ListGroup, Row } from 'react-bootstrap'
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
@@ -130,7 +130,7 @@ const Description = () => {
                                 </IconButton>
                             </Col>
                             <Col sm={9} style={{ margin: 'auto' }}>
-                                <Button variant='dark' style={{ width: '100%' }}>Add to Cart</Button>
+                                <Button variant='dark' style={{ width: '100%' }} onClick={() => { alert('Item added to your cart'); window.location.reload() }}>Add to Cart</Button>
                             </Col>
                         </Row>
                     </Col>
