@@ -12,6 +12,7 @@ import {EditProfile} from './Components/EditProfile';
 import MenuHomePage from './Components/Display_Menu/MenuHomePage';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import AppointmentForm from './Components/AppointmentForm';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/profile" element={<Profile/>} />
         <Route path="/ForgotPassword" element={<ForgotPassword/>} />
         <Route path="/editProfile" element={<EditProfile/>} />
+        <Route path="/appointmentform" element={<AppointmentForm/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>

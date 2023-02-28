@@ -13,7 +13,7 @@ const Header = () => {
                     <img src='images/logo.png' className='App-logo' alt='logo' />
                     <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, textAlign:'center', display: { xs: 'none', sm: 'block' } }}>
                         <Link style={{color: 'white', textDecoration: 'none'}}>Menu</Link>&emsp;
-                        <Link style={{color: 'white', textDecoration: 'none'}}>Services</Link>&emsp;
+                        <Link href ="/AppointmentForm" style={{color: 'white', textDecoration: 'none'}}>Services</Link>&emsp;
                         <Link style={{color: 'white', textDecoration: 'none'}}>Contact</Link>
                     </Typography>
                     <Toolbar>
