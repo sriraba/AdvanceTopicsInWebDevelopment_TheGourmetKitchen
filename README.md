@@ -24,8 +24,8 @@ Sri Ramya Basam - B00900307 (User Management)
 * [Netlify](https://www.netlify.com/) - Used for deployment.
 
 ### Submissions (along with links)
-* [Gitlab](https://reactjs.org/) - 
-* [Netlify](https://mui.com/) - 
+* [Gitlab]() - https://git.cs.dal.ca/basam/group16_csci5709
+* [Netlify]() - https://stately-phoenix-746b0e.netlify.app/ 
 
 ```sh
 For Login please enter these credentials:
