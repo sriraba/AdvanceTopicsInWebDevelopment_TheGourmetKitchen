@@ -1,9 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { AppBar, Box, Grid, Link, TextField, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, Toolbar, Typography } from '@mui/material'
 import React from 'react'
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { Dropdown } from 'react-bootstrap'
-import Description from './Description';
 
 const Footer = () => {
     return (

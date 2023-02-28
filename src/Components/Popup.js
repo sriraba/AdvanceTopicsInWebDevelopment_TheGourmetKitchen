@@ -7,9 +7,9 @@
 
 import React from 'react'
 import { Dialog, DialogTitle, DialogContent, makeStyles, Typography } from '@material-ui/core';
-import { Grid,Paper, TextField, Button} from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
-const buttonstyle={margin:'8px 0'}
+const buttonstyle = { margin: '8px 0' }
 
 
 const popupStyles = makeStyles(theme => ({
@@ -28,13 +28,13 @@ export default function Popup(props) {
     const { message, openPopupWindow, setOpenPopupWindow } = props;
     const classes = popupStyles();
 
-    const handledelete = () => {   
-        navigate('/');    
-      };
+    const handledelete = () => {
+        navigate('/');
+    };
 
-    const handlenodelete = () => {  
-        window.location.reload();   
-      };
+    const handlenodelete = () => {
+        window.location.reload();
+    };
 
     return (
         <Dialog open={openPopupWindow} maxWidth="md" classes={{ paper: classes.popupWrapper }}>
@@ -46,8 +46,8 @@ export default function Popup(props) {
                 </div>
             </DialogTitle>
             <DialogContent dividers>
-            <Button type='submit' color='primary' variant="contained"  style={buttonstyle} onClick={handledelete} fullWidth>Yes</Button> 
-            <Button type='submit' color='primary' variant="contained"  style={buttonstyle} onClick={handlenodelete} fullWidth>No</Button>
+                <Button type='submit' color='primary' variant="contained" style={buttonstyle} onClick={handledelete} fullWidth>Yes</Button>
+                <Button type='submit' color='primary' variant="contained" style={buttonstyle} onClick={handlenodelete} fullWidth>No</Button>
             </DialogContent>
         </Dialog>
     )

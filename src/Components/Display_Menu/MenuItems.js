@@ -2,11 +2,11 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Menu = ({ items }) => {
- 
+
   const navigate = useNavigate();
 
   function handleClick() {
-    navigate("/singleitem")
+    navigate("/description")
   };
 
   return (
@@ -14,7 +14,7 @@ const Menu = ({ items }) => {
       {items.map((item) => {
         const { id, title, img, desc, price } = item;
         return (
-          <article key={id} className="menu-item" onClick={() => handleClick()} style = { {cursor: 'pointer'}}>
+          <article key={id} className="menu-item" onClick={() => handleClick()} style={{ cursor: 'pointer' }}>
             <img src={img} alt={title} className="photo" />
             <div className="item-info">
               <header>
@@ -24,7 +24,7 @@ const Menu = ({ items }) => {
               <p className="item-text">{desc}</p>
             </div>
           </article>
-          
+
         );
       })}
     </div>

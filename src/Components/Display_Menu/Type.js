@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Type = ({ type, filterItems, activeCategory }) => {
   return (
@@ -7,9 +8,8 @@ const Type = ({ type, filterItems, activeCategory }) => {
         return (
           <button
             type="button"
-            className={`${
-              activeCategory === category ? "filter-btn active" : "filter-btn"
-            }`}
+            className={`${activeCategory === category ? "filter-btn active" : "filter-btn"
+              }`}
             key={index}
             onClick={() => filterItems(category)}
           >
@@ -17,6 +17,7 @@ const Type = ({ type, filterItems, activeCategory }) => {
           </button>
         );
       })}
+      <button className="filter-btn" onClick={() => window.location.reload(false)}>All</button>
     </div>
   );
 };

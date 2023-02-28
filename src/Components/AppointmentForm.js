@@ -7,17 +7,13 @@ import {
   CardContent,
   Typography,
 } from "@mui/material";
-import { DatePicker, MobileDatePicker, TimePicker } from "@mui/lab";
+import { TimePicker } from "@mui/lab";
 import { useNavigate } from "react-router-dom";
-import { DateFnsAdapter } from "@mui/lab";
 import Header from "./Header";
 import Footer from "./Footer";
 //import { TimePicker } from '@mui/x-date-pickers/TimePicker';
-import { DesktopTimePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import Stack from "@mui/material/Stack";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 
 
@@ -115,15 +111,15 @@ function AppointmentForm() {
 
   return (
     <div>
-      
-      <Typography gutterBottom variant="h3" align="center">
-        Appointment Form
-      </Typography>
+      <Header />
 
       <Grid>
+
         <Card
-          style={{ maxWidth: 1000, padding: "100px 6px", margin: "0 auto" }}
-        >
+          style={{ maxWidth: 500, padding: "1% 1%", margin: "3% auto" }}
+        ><Typography gutterBottom variant="h5" align="center">
+            Appointment Form
+          </Typography>
           <CardContent>
             <form>
               <Grid container spacing={2}>
@@ -191,36 +187,34 @@ function AppointmentForm() {
                     onChange={handleMessage}
                   />
                 </Grid>
-                <TimePicker
-          label="Time"
-          value={setTime}
-          onChange={handleChange}
-          renderInput={(params) => <TextField {...params} />}
-        />
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  {/* <DateTimePicker
+
+                <Grid item xs={12} sm={6}>
+                  <TimePicker
+                    label="Time"
+                    value={setTime}
+                    onChange={handleChange}
+                    renderInput={(params) => <TextField {...params} />}
+                  />
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    {/* <DateTimePicker
                     renderInput={(props) => <TextField {...props} />}
                     label="DateTimePicker"
                     value={datetime}
                     onChange={(newValue) => {}}
                   /> */}
-                  <DesktopDatePicker
-                    label="Date desktop"
-                    inputFormat="MM/DD/YYYY"
-                    onChange={handleDate}
-                    value={value}
-                    error={fErrorMessage}
-                    helperText={fErrorMessage}
-                    renderInput={(params) => <TextField {...params} />}
-                  />
-          
-
-                  
-                </LocalizationProvider>
-                <LocalizationProvider
-                  dateAdapter={AdapterDayjs}
-                ></LocalizationProvider>
-                <Grid item xs={12} sm={6}>
+                    <DesktopDatePicker
+                      label="Date desktop"
+                      inputFormat="MM/DD/YYYY"
+                      onChange={handleDate}
+                      value={value}
+                      error={fErrorMessage}
+                      helperText={fErrorMessage}
+                      renderInput={(params) => <TextField {...params} />}
+                    />
+                  </LocalizationProvider>
+                  <LocalizationProvider
+                    dateAdapter={AdapterDayjs}
+                  ></LocalizationProvider>
                 </Grid>
                 <Grid item xs={12}>
                   <Button
@@ -238,6 +232,7 @@ function AppointmentForm() {
           </CardContent>
         </Card>
       </Grid>
+      <div style={{ position: 'absolute', bottom: '0px', width: '100%' }}> <Footer />  </div>
     </div>
   );
 }

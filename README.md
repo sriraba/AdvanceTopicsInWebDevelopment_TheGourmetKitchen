@@ -1,12 +1,18 @@
-# CSCI5709_Aneri_Shah_B00912616
-## _Assignment 1_
+# CSCI5709_Group_16
+## _Project Proposal_
 
 ```sh
 Aneri Shah - B00912616 (Ratings & Review feature)
+Purvisha Patel - B00912611 (Display Menu)
+Dhruvit Raval - B00902291 (Appointment Booking)
+Sri Ramya Basam - B00900307 (User Management)
 ```
 
 ## Author
 [Aneri Shah](an235252@dal.ca) - *(Maintainer)*
+[Purvisha Patel](pr542178@dal.ca) - *(Maintainer)*
+[Dhruvit Raval](dh343307@dal.ca) - *(Maintainer)*
+[Sri Ramya Basam](sr881461@dal.ca) - *(Maintainer)*
 
 ## Getting Started
 
@@ -18,8 +24,8 @@ Aneri Shah - B00912616 (Ratings & Review feature)
 * [Netlify](https://www.netlify.com/) - Used for deployment.
 
 ### Submissions (along with links)
-* [Gitlab](https://reactjs.org/) - https://git.cs.dal.ca/avshah/csci5709_aneri_shah_b00912616/-/tree/assignment_1/ 
-* [Netlify](https://mui.com/) - https://courageous-froyo-9d6b6a.netlify.app/ 
+* [Gitlab](https://reactjs.org/) - 
+* [Netlify](https://mui.com/) - 
 
 ### Components Used (along with links)
 | Component | Description |
@@ -33,3 +39,4 @@ Aneri Shah - B00912616 (Ratings & Review feature)
 | Card | To display content in a card layout |
 | material Icons | To post icons on the page |
 | Rating | For the review rating  |
+| Date Picker | For the date calendar |

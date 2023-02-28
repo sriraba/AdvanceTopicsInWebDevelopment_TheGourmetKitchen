@@ -6,13 +6,13 @@
  */
 import React, { useState } from 'react';
 import { Grid } from "@material-ui/core";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import Popup from './Popup';
+import { Button } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
 const Profile = () => {
 
@@ -21,51 +21,28 @@ const Profile = () => {
   const [openPopup, setOpenPopup] = useState(false)
   const editProfile = () => {
     setOpen(true);
-    localStorage.clear();    
-    navigate('/editProfile');    
+    localStorage.clear();
+    navigate('/editProfile');
   };
-  const deleteProfile = () => {   
+  const deleteProfile = () => {
     setOpenPopup(true)
     // navigate('/');    
   };
 
   return (
-<div className="App">
-        <Header />  
-<br></br> 
-<Grid container spacing={2}>
-  <Grid item xs={8}>
-    <Card  style = {{width:200, height: 150, marginLeft: 200} } variant="outlined" onClick={editProfile}>
-        <CardContent>
-          <Typography
-            className={"MuiTypography--subheading"}
-            variant={"h6"} 
-            justifyContent={"center"}  >
-            Edit Profile
-          </Typography>         
-        </CardContent>
-      </Card>    
-  </Grid>
-  <Grid item xs={4}>
-  <Card  style = {{width:200, height: 150}} onClick={deleteProfile}>
-        <CardContent>
-          <Typography
-            className={"MuiTypography--subheading"}
-            variant={"h6"} 
-            justifyContent={"center"}  >
-            Delete Profile
-          </Typography>         
-        </CardContent>
-      </Card>  
-  </Grid>
-</Grid> 
-<Popup message="Are you sure you want to delete?" openPopupWindow={openPopup} setOpenPopupWindow={setOpenPopup}> </Popup>
-<br></br>
-<br></br>
-<div style={{position: 'absolute', bottom: '0px', width: '100%'}}> <Footer />  </div>         
-    </div>   
-     
+    <div className="App">
+      <Header />
+      <br></br>
+      <Grid style={{ marginLeft: "5%" }}>
+        <Button variant="outlined" startIcon={<EditIcon />} onClick={editProfile}>Edit Profile</Button>
+        <br /><br />
+        <Button variant="outlined" startIcon={<DeleteIcon />} onClick={deleteProfile}>Delete Account</Button>
+      </Grid>
+      <Popup message="Are you sure you want to delete?" openPopupWindow={openPopup} setOpenPopupWindow={setOpenPopup}> </Popup>
+      <div style={{ position: 'absolute', bottom: '0px', width: '100%' }}> <Footer />  </div>
+    </div>
+
   );
 };
 
-export {Profile};
+export { Profile };

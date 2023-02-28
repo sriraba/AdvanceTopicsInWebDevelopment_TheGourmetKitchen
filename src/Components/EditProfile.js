@@ -1,13 +1,12 @@
 /**
  * Title: Edit Profile page
- * Author: Sri Ramya Basam
- * Date: 2023/02/25
+ * Author: Sri Ramya Basam & Aneri Shah (design changes)
+ * Date: 2023/02/27
  * Reference: https://mui.com/material-ui/getting-started/overview/ 
  */
 
 import React, { useState } from "react";
 import { Grid,Paper, TextField, Button} from '@material-ui/core'
-import { useNavigate } from 'react-router-dom';
 import { InputLabel } from '@material-ui/core';
 import Header from './Header';
 import Footer from './Footer';

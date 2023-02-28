@@ -15,7 +15,7 @@ const menu = [
     img: './images/dalroti.png',
     desc: `Lorem ipsum dolor sit amet, consectetur  incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud.`,
   },
-  { 
+  {
     id: 3,
     title: 'Meal Combo 2',
     category: 'lunch',
