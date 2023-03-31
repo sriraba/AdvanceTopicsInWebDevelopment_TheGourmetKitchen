@@ -3,10 +3,8 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-// Components
 import CartItem from "../components/CartItem";
 
-// Actions
 import { addToCart, removeFromCart } from "../redux/actions/cartActions";
 
 const CartScreen = () => {
@@ -36,11 +34,11 @@ const CartScreen = () => {
   };
 
   return (
-    <>
+    <div id="grid">
       <div className="cartscreen">
         <div className="cartscreen__left">
-          <h2>Shopping Cart</h2>
-
+          <h2 style={{paddingBottom: 20}}>Shopping Cart</h2>
+          <div>
           {cartItems.length === 0 ? (
             <div>
               Your Cart Is Empty <Link to="/home">Go Back</Link>
@@ -55,6 +53,7 @@ const CartScreen = () => {
               />
             ))
           )}
+          </div>
         </div>
 
         <div className="cartscreen__right">
@@ -67,7 +66,7 @@ const CartScreen = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

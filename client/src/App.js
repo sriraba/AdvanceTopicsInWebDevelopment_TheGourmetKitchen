@@ -16,11 +16,17 @@ import Navbar from './js/Display_Menu/components/Navbar';
 import Cart from './js/Cart';
 import {EmailVerification} from './js/EmailVerification';
 import {VerifyCode} from './js/VerifyCode';
+import SideDrawer from "./js/Display_Menu/components/SideDrawer";
+import Backdrop from "./js/Display_Menu/components/Backdrop";
+import { useState } from "react";
 
 function App() {
+  const [sideToggle, setSideToggle] = useState(false);
   return (
     <BrowserRouter>
-    <Navbar /> 
+    <Navbar click={() => setSideToggle(true)} />
+    <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
+    <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
     <Routes>
         <Route path="/description" element={<Description />} />
         <Route path="/" element={<Login />} />

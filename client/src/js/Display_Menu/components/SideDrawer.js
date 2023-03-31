@@ -1,6 +1,9 @@
 import "./SideDrawer.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { Dropdown } from "react-bootstrap";
+import { AppBar, Badge, Box, Grid, Toolbar } from "@mui/material";
 
 const SideDrawer = ({ show, click }) => {
   const sideDrawerClass = ["sidedrawer"];
@@ -29,7 +32,19 @@ const SideDrawer = ({ show, click }) => {
           </Link>
         </li>
         <li>
-          <Link to="/">Shop</Link>
+        <Link to="/profile">
+              <span>Profile</span>
+          </Link>
+        </li>
+        <li>
+        <Link to="/appointmentform">
+              <span>Services</span>
+          </Link>
+        </li>
+        <li>
+        <Link to="/">
+              <span>Logout</span>
+          </Link>
         </li>
       </ul>
     </div>

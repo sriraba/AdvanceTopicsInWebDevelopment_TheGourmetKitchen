@@ -14,7 +14,7 @@ const Product = ({ imageUrl, description, price, name, productId }) => {
         <p className="info__price">${price}</p>
 
         <Link to={`/menuItems/${productId}`} className="info__button">
-          View
+          View More
         </Link>
       </div>
     </div>

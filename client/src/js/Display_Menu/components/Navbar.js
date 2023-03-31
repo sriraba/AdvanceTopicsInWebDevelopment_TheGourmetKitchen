@@ -17,7 +17,7 @@ const Navbar = ({ click }) => {
   return (
     <nav className="navbar">
       <Link href="/home">
-        <img src="images/logo.png" className="App-logo" alt="logo" />
+        <img src="images/logo.png" alt="logo" style={{maxWidth: 200}} />
       </Link>
       <ul className="navbar__links">
         <li>
@@ -29,21 +29,13 @@ const Navbar = ({ click }) => {
           </Link>
         </li>
         <li>
-        <Box sx={{ flexGrow: 3 }}>
-      <AppBar position="static">
-        <Toolbar className="header">
-          
           <Grid container alignItems="center">
             <Grid item xs></Grid>
             <Grid item>
-              <Dropdown>
-                
-                <Dropdown.Toggle
-                  style={{ backgroundColor: "#4e888f", borderColor: "#4e888f" }}
-                >
+              <Dropdown >
+                <Dropdown.Toggle className="cart__link">
                   <AccountCircleIcon />
                 </Dropdown.Toggle>
-
                 <Dropdown.Menu>
                   <Dropdown.Item href="/profile">Profile</Dropdown.Item>
                   <Dropdown.Item href="/appointmentform">
@@ -54,9 +46,6 @@ const Navbar = ({ click }) => {
               </Dropdown>
             </Grid>
           </Grid>
-        </Toolbar>
-      </AppBar>
-    </Box>
         </li>
       </ul>
 

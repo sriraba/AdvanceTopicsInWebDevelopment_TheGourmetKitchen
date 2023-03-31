@@ -4,7 +4,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 1rem;
+  padding: 0.1rem 1.20rem;
+  padding-bottom: 0.6rem;
+  padding-top: 0.6rem;
   z-index: 50;
 }
 
