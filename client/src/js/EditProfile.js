@@ -10,16 +10,36 @@ import { Grid,Paper, TextField, Button} from '@material-ui/core'
 import { InputLabel } from '@material-ui/core';
 import Header from './Header';
 import Footer from './Footer';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const EditProfile=()=>{
     const backGroundStyle={padding :20,height:'40vh',width:280, margin:"20px auto"}
     const buttonstyle={margin:'9px 0'}
     const [email, setEmail] = useState("");
     const [firstname, setFirstName] = useState("");
-    const [lastname, setLastName] = useState("");   
+    const [lastname, setLastName] = useState("");  
+    const navigatePage = useNavigate(); 
     const onSubmit = (event) => {
-        event.preventDefault();      
-        window.location.reload();       
+        event.preventDefault();  
+        const api = "http://localhost:5000/api/users/updateprofile";
+    const userinfo = {
+      email: email,
+      firstname: firstname,
+      lastname: lastname
+
+    };
+    axios
+    .post(api, userinfo)
+    .then((response) => {
+      console.log(response);
+      alert("Profile changed successfully");
+      navigatePage("/home");
+    })
+    .catch((error) => {
+      alert(error.response.data.message);
+      navigatePage("/home");
+    });     
            
     };
 

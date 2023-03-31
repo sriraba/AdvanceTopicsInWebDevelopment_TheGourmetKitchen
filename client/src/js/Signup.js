@@ -51,15 +51,35 @@ const Signup = () => {
     localStorage.setItem("firstname", firstname);
     localStorage.setItem("lastname", lastname);
     localStorage.setItem("email", email);
-    const api = "http://localhost:80/api/users/";
+    const api = "http://localhost:5000/api/users/";
     const userinfo = {
       email: email,
       password: password,
       firstname: firstname,
       lastname: lastname,
     };
+
+    // axios.post(api, {
+    //   headers: {
+    //       'Access-Control-Allow-Headers':'*',
+    //       'Content-Type': 'application/json',
+    //       'Access-Control-Allow-Origin':'*',
+    //       'Access-Control-Allow-Credentials':'true',
+    //       'Access-Control-Request-Method': 'POST'
+    //   },
+
+    // userinfo)
     console.log(userinfo);
-    axios.post(api, userinfo).then((response) => {
+    axios.post(api, {
+      headers: {
+        'Access-Control-Allow-Headers':'*',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Credentials':'true',
+        'Access-Control-Request-Method': 'POST'
+      },
+      userinfo
+  }).then((response) => {
       console.log(response);
     });
     navigation("/home");

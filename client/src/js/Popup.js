@@ -9,7 +9,9 @@ import React from 'react'
 import { Dialog, DialogTitle, DialogContent, makeStyles, Typography } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
+import axios from "axios";
 const buttonstyle = { margin: '8px 0' }
+
 
 
 const popupStyles = makeStyles(theme => ({
@@ -24,12 +26,28 @@ const popupStyles = makeStyles(theme => ({
 }))
 
 export default function Popup(props) {
-    const navigate = useNavigate();
     const { message, openPopupWindow, setOpenPopupWindow } = props;
     const classes = popupStyles();
+    const navigatePage = useNavigate(); 
 
     const handledelete = () => {
-        navigate('/');
+
+        const api = "http://localhost:5000/api/users/delete";
+        console.log(localStorage.getItem("email"))
+    const userinfo = {
+      email: localStorage.getItem("email")
+    };
+    axios
+    .post(api, userinfo)
+    .then((response) => {
+      console.log(response);
+      navigatePage("/");
+    })
+    .catch((error) => {
+      alert(error.response.data.message);
+      navigatePage("/home");
+    });
+       
     };
 
     const handlenodelete = () => {

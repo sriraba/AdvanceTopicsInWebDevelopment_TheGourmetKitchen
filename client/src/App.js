@@ -11,6 +11,9 @@ import {ForgotPassword} from './js/ForgotPassword';
 import {EditProfile} from './js/EditProfile';
 import AppointmentForm from './js/AppointmentForm';
 import Cart from './js/Cart';
+import {EmailVerification} from './js/EmailVerification';
+import {VerifyCode} from './js/VerifyCode';
+
 
 
 
@@ -27,6 +30,8 @@ function App() {
         <Route path="/editProfile" element={<EditProfile />} />
         <Route path="/appointmentform" element={<AppointmentForm />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/collectemail" element={<EmailVerification />} />
+        <Route path="/verifycode" element={<VerifyCode />} />
       </Routes>
     </BrowserRouter>
   );

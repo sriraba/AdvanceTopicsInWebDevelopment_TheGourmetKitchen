@@ -19,6 +19,7 @@ const Profile = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const [openPopup, setOpenPopup] = useState(false)
+  
   const editProfile = () => {
     setOpen(true);
     localStorage.clear();
@@ -28,6 +29,8 @@ const Profile = () => {
     setOpenPopup(true)
     // navigate('/');    
   };
+
+  
 
   return (
     <div className="App">
