@@ -3,7 +3,7 @@ import React from 'react'
 import { Button, Carousel, Col, Container, ListGroup, Row } from 'react-bootstrap'
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import FeedBack from './FeedBack';
+import FeedBack from './Feedback/FeedBack';
 import Footer from './Footer';
 
 const Description = () => {
