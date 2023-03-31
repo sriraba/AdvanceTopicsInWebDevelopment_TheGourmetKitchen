@@ -12,8 +12,10 @@ import AppointmentForm from './js/AppointmentForm';
 import HomeScreen from "./js/Display_Menu/screens/HomeScreen";
 import ProductScreen from "./js/Display_Menu/screens/ProductScreen";
 import CartScreen from "./js/Display_Menu/screens/CartScreen";
-import Header from './js/Header';
 import Navbar from './js/Display_Menu/components/Navbar';
+import Cart from './js/Cart';
+import {EmailVerification} from './js/EmailVerification';
+import {VerifyCode} from './js/VerifyCode';
 
 function App() {
   return (
@@ -31,6 +33,9 @@ function App() {
         <Route path="/cart" element={<CartScreen />} />
         <Route path="/menuItems/:id" element={<ProductScreen /> } />
         <Route path="/cart" element={<CartScreen /> } />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/collectemail" element={<EmailVerification />} />
+        <Route path="/verifycode" element={<VerifyCode />} />
       </Routes>
     </BrowserRouter>
   );
