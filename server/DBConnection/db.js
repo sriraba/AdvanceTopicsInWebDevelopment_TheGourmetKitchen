@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const DB_URL =
-"mongodb+srv://purvisha08:purvisha08@tutorial6.uwf0pof.mongodb.net/gormetkitchen";
+"mongodb+srv://gaurmet:gaurmet@gaurmet-database.l9jb9am.mongodb.net/gaurmet-database?retryWrites=true&w=majority";
 
 const warningParam={ useNewUrlParser: true };
 
