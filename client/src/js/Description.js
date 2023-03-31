@@ -4,13 +4,11 @@ import { Button, Carousel, Col, Container, ListGroup, Row } from 'react-bootstra
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import FeedBack from './FeedBack';
-import Header from './Header';
 import Footer from './Footer';
 
 const Description = () => {
     return (
         <div>
-            <Header></Header>
             <Container style={{ marginTop: '1%' }}>
                 <Row>
                     <Typography gutterBottom variant="h5" style={{ color: "#4e888f" }}>

@@ -1,11 +1,12 @@
-import { AppBar, Badge, Box, Grid, Link, Toolbar } from "@mui/material";
-import React from "react";
+import "./Navbar.css";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Dropdown } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import '../css/header.css'
+import { AppBar, Badge, Box, Grid, Toolbar } from "@mui/material";
+import React from "react";
 
-const Header = () => {
+const Navbar = ({ click }) => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
@@ -14,23 +15,29 @@ const Header = () => {
   };
 
   return (
-    <Box sx={{ flexGrow: 3 }}>
+    <nav className="navbar">
+      <Link href="/home">
+        <img src="images/logo.png" className="App-logo" alt="logo" />
+      </Link>
+      <ul className="navbar__links">
+        <li>
+          <Link to="/cart" className="cart__link">
+            <i className="fas fa-shopping-cart"></i>
+            <span>
+              Cart <span className="cartlogo__badge">{getCartCount()}</span>
+            </span>
+          </Link>
+        </li>
+        <li>
+        <Box sx={{ flexGrow: 3 }}>
       <AppBar position="static">
         <Toolbar className="header">
-          <Link href="/home">
-            <img src="images/logo.png" className="App-logo" alt="logo" />
-          </Link>
+          
           <Grid container alignItems="center">
             <Grid item xs></Grid>
             <Grid item>
               <Dropdown>
-                <Link to="/cart" className="cart__link">
-                  <i className="fas fa-shopping-cart"></i>
-                  <span>
-                    Cart{" "}
-                    <span className="cartlogo__badge">{getCartCount()}</span>
-                  </span>
-                </Link>
+                
                 <Dropdown.Toggle
                   style={{ backgroundColor: "#4e888f", borderColor: "#4e888f" }}
                 >
@@ -50,7 +57,16 @@ const Header = () => {
         </Toolbar>
       </AppBar>
     </Box>
+        </li>
+      </ul>
+
+      <div className="hamburger__menu" onClick={click}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
   );
 };
 
-export default Header;
+export default Navbar;

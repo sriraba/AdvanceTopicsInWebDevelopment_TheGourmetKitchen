@@ -2,7 +2,7 @@ const menuData = [
   {
     name: "Private Events",
     imageUrl:
-      "https://www.bitesbee.com/wp-content/uploads/2021/09/Chicken-Rara-Jeera-Rice-_-Butter-Naan.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQArZTQSjnHUnEwD-NLglytOxGbT4Px9Le6IQ&usqp=CAU",
     description:
       "Private Events organized by us provides variety of menus which are customizable. We try to make your Event delightful by our food.",
     price: 499,
@@ -13,7 +13,7 @@ const menuData = [
     imageUrl:
       "https://www.bitesbee.com/wp-content/uploads/2021/09/Chicken-Rara-Jeera-Rice-_-Butter-Naan.png",
     description:
-      "Welcome to a new era of iPhone. Beautifully bright 6.1-inch Super Retina XDR display.1 Ceramic Shield with 4x better drop performance.2 Incredible low-light photography with Night mode on all cameras. Cinema-grade Dolby Vision video recording, editing, and playback. Powerful A14 Bionic chip. And new MagSafe accessories for easy attach and faster wireless charging.3 Let the fun begin.",
+      "Meal combo Vegeterian is food combo",
     price: 99,
     countInStock: 5,
   },
@@ -22,7 +22,7 @@ const menuData = [
     imageUrl:
       "https://bjsrestaurants.scene7.com/is/image/bjsrestaurants/catering-pizzacombo-36r-1",
     description:
-      "The EOS-1D X combines speed with image quality, to create the next generation camera for professionals. Full frame 18 megapixel sensor with Dual “DIGIC 5+” processors sets the standard, and up to 12 frames per second shooting takes it beyond.",
+      "Meal Combo Meat",
     price: 99,
     countInStock: 5,
   },
@@ -38,7 +38,7 @@ const menuData = [
   {
     name: "Indian Catering",
     imageUrl:
-      "https://catering.littleindia.ca/wedding-caterers-indian-food/",
+      "https://catering.littleindia.ca/wp-content/uploads/2018/02/wedding-caterers-indian-food-1024x622.jpg",
     description:
       "Indian organized by us provides variety of menus which are customizable. We try to make your Event delightful by serving the Indian Authencicate food.",
     price: 699,
