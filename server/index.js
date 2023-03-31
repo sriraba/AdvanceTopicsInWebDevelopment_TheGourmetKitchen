@@ -2,8 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const menuRoutes = require("./Routes/menuRoutes");
 const dbConnection = require("./DBConnection/db");
-const usersRouter = require('./routes/users.route');
-const cors = require('cors');
+const usersRouter = require('./Routes/usersRoute');
+const cors = require('./Models/codesModel');
 
 dbConnection();
 
@@ -15,8 +15,7 @@ const corsOptions = {
   methods: 'GET, POST, PATCH, PUT, DELETE',
   optionsSuccessStatus: 204
 }
-app.use(cors(corsOptions));
-
+// app.use(corsOptions);
 
 app.get("/", (req, res) => {
   res.json({ message: "API running..." });

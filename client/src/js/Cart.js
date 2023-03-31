@@ -7,7 +7,6 @@ import ClearIcon from '@mui/icons-material/Clear';
 export default function Cart() {
     return (
         <div>
-            <Header />
             <Container style={{ paddingBottom: "2%" }}>
                 <Paper elevation={8} style={{ marginTop: "2%", padding: "2%" }}>
                     <Typography variant='overline' style={{ fontSize: "20px", color: "#4e888f" }}>shopping cart</Typography>

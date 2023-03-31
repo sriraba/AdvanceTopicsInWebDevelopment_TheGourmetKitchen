@@ -1,5 +1,5 @@
-const Users1 = require('../models/users.model');
-const Codes1 = require('../models/codes.model');
+const Users1 = require('../Models/usersModel');
+const Codes1 = require('../Models/codesModel');
 
 var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
