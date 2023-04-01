@@ -9,12 +9,14 @@ import {
 } from "@mui/material";
 import { TimePicker } from "@mui/lab";
 import { useNavigate } from "react-router-dom";
-import Header from "./Header";
 import Footer from "./Footer";
 //import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
+import Navbar from "./Display_Menu/components/Navbar";
+import SideDrawer from "./Display_Menu/components/SideDrawer";
+import Backdrop from "./Display_Menu/components/Backdrop";
 
 
 function AppointmentForm() {
@@ -108,10 +110,12 @@ function AppointmentForm() {
       setNumberErrorMessage(Date_Error);
     }
   };
-
+  const [sideToggle, setSideToggle] = useState(false);
   return (
     <div>
-      <Header />
+      <Navbar click={() => setSideToggle(true)} />
+      <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
+      <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
 
       <Grid>
 

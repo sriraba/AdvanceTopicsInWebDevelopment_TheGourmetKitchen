@@ -3,6 +3,11 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from 'react-router-dom';
 
+// Components
+import Navbar from "../components/Navbar";
+import SideDrawer from "../components/SideDrawer";
+import Backdrop from "../components/Backdrop";
+
 // Actions
 import { getProductDetails } from "../redux/actions/productActions";
 import { addToCart } from "../redux/actions/cartActions";
@@ -28,8 +33,13 @@ const ProductScreen = ({ match, history }) => {
     history.push(`/cart`);
   };
 
+  const [sideToggle, setSideToggle] = useState(false);
+
   return (
     <div>
+      <Navbar click={() => setSideToggle(true)} />
+      <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
+      <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <div className="productscreen">
         {loading ? (
           <h2>Loading...</h2>
@@ -79,8 +89,8 @@ const ProductScreen = ({ match, history }) => {
           </>
         )}
       </div>
-      <FeedBack />
-      <Sample />
+      <FeedBack unique = {id} />
+      {/* <Sample /> */}
     </div>
   );
 };

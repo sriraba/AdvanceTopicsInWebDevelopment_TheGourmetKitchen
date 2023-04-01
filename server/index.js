@@ -3,6 +3,7 @@ const express = require("express");
 const menuRoutes = require("./Routes/menuRoutes");
 const dbConnection = require("./DBConnection/db");
 const usersRouter = require('./Routes/usersRoute');
+const feedRoute = require('./Routes/feedRoute');
 //const cors = require('./Models/codesModel');
 const cors = require('cors');
 
@@ -24,7 +25,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/menuItems", menuRoutes);
-
+app.use("/api/feedback", feedRoute);
 app.use('/api/users', usersRouter);
 
 const PORT = process.env.PORT || 5000;

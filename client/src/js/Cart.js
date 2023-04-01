@@ -1,7 +1,6 @@
 import { Button, Container, Divider, Grid, List, ListItem, ListItemText, Paper, Table, TableCell, TableRow, TextField, Typography } from '@mui/material'
 import React from 'react'
 import Footer from './Footer'
-import Header from './Header'
 import ClearIcon from '@mui/icons-material/Clear';
 
 export default function Cart() {

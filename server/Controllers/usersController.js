@@ -233,12 +233,16 @@ const sendEmail = async (request, response) => {
   });
 };
 
+const getUserNameFromEmail = async (emailId) => {
+  return await Users1.find({email : emailId});
+}
 module.exports = {
   validUser,
   createUser,
   getUsers,
   getUserById,
   getUserByEmail,
+  getUserNameFromEmail,
   deleteUser,
   updateUser,
   sendEmail,
