@@ -70,16 +70,17 @@ const Signup = () => {
 
     // userinfo)
     console.log(userinfo);
-    axios.post(api, {
-      headers: {
-        'Access-Control-Allow-Headers':'*',
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin':'*',
-        'Access-Control-Allow-Credentials':'true',
-        'Access-Control-Request-Method': 'POST'
-      },
-      userinfo
-  }).then((response) => {
+  //   axios.post(api, {
+  //     headers: {
+  //       'Access-Control-Allow-Headers':'*',
+  //       'Content-Type': 'application/json',
+  //       'Access-Control-Allow-Origin':'*',
+  //       'Access-Control-Allow-Credentials':'true',
+  //       'Access-Control-Request-Method': 'POST'
+  //     },
+  //     userinfo
+  // })
+  axios.post(api, userinfo).then((response) => {
       console.log(response);
     });
     navigation("/home");
