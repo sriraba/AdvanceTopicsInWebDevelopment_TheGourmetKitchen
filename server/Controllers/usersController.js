@@ -98,12 +98,7 @@ const deleteUser = async (request, response) => {
   console.log(request.body.email);
 
   try {
-
-    Users1.deleteMany({email: request.body.email}, {$set: {
-      email: request.body.email
-    }},
-    {returnDocument : 'after'}
-  ).then((result) => {
+  Users1.deleteMany({email: request.body.email}).then((result) => {
     response.status(200).json({
         message: "User deleted",
       })
@@ -114,7 +109,7 @@ const deleteUser = async (request, response) => {
   }
 };
 
-const updateUser = async (request, response) => {x
+const updateUser = async (request, response) => {
   // const { email } = request.params;
   const updates = {
     email: request.body.email,

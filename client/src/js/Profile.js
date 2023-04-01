@@ -22,7 +22,6 @@ const Profile = () => {
   
   const editProfile = () => {
     setOpen(true);
-    localStorage.clear();
     navigate('/editProfile');
   };
   const deleteProfile = () => {

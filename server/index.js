@@ -3,7 +3,8 @@ const express = require("express");
 const menuRoutes = require("./Routes/menuRoutes");
 const dbConnection = require("./DBConnection/db");
 const usersRouter = require('./Routes/usersRoute');
-const cors = require('./Models/codesModel');
+//const cors = require('./Models/codesModel');
+const cors = require('cors');
 
 dbConnection();
 
@@ -16,6 +17,7 @@ const corsOptions = {
   optionsSuccessStatus: 204
 }
 // app.use(corsOptions);
+app.use(cors(corsOptions));
 
 app.get("/", (req, res) => {
   res.json({ message: "API running..." });
