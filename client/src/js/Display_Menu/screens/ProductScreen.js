@@ -1,7 +1,7 @@
 import "./ProductScreen.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 // Components
 import Navbar from "../components/Navbar";
@@ -12,7 +12,6 @@ import Backdrop from "../components/Backdrop";
 import { getProductDetails } from "../redux/actions/productActions";
 import { addToCart } from "../redux/actions/cartActions";
 import FeedBack from "../../Feedback/FeedBack";
-import Sample from "../../Feedback/Sample";
 
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1);
@@ -41,12 +40,14 @@ const ProductScreen = ({ match, history }) => {
       <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
       <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <div className="productscreen">
+      
         {loading ? (
           <h2>Loading...</h2>
         ) : error ? (
           <h2>{error}</h2>
         ) : (
           <>
+            
             <div className="productscreen__left">
               <div className="left__image" >
                 <img src={product.imageUrl} alt={product.name} style={{ maxWidth: 500 }} />
@@ -90,7 +91,6 @@ const ProductScreen = ({ match, history }) => {
         )}
       </div>
       <FeedBack unique = {id} />
-      {/* <Sample /> */}
     </div>
   );
 };

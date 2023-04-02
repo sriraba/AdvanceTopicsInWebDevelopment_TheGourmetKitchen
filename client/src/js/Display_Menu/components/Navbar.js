@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Dropdown } from "react-bootstrap";
-import { AppBar, Badge, Box, Grid, Toolbar } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import React from "react";
+
 
 const Navbar = ({ click }) => {
   const cart = useSelector((state) => state.cart);
