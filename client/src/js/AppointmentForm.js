@@ -70,8 +70,9 @@ function AppointmentForm() {
       time: time,
       description: message,
     };
+    // http://localhost:5000/api/appointment
     await axios
-      .post("http://localhost:5000/api/appointment", appointmentdata)
+      .post("https://the-gourmet-kitchen.onrender.com/api/appointment", appointmentdata)
       .then((res) => {});
 
     navigation("/");
@@ -131,7 +132,7 @@ function AppointmentForm() {
     value.$d = new Date(value.$d.getTime() - offset * 60 * 1000);
     let date = value.$d.toISOString().split("T")[0];
     await axios
-      .get(`http://localhost:5000/api/appointment/timeslot?date=${date}`)
+      .get(`https://the-gourmet-kitchen.onrender.com/api/appointment/timeslot?date=${date}`)
       .then((res) => {
         // console.log(res.data.data.);
         let allValues = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
