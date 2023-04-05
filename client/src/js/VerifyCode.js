@@ -1,5 +1,5 @@
 /**
- * Title: Forgot password page
+ * Title: One Time Password Verification For Forgot password 
  * Author: Sri Ramya Basam
  * Date: 2023/02/20
  * Reference: https://mui.com/material-ui/getting-started/overview/,
@@ -22,6 +22,8 @@ const VerifyCode = () => {
   const buttonstyle = { margin: "9px 0" };
   const [code, setCode] = useState("");
   const navigatePage = useNavigate();
+
+  // backend call to validate OTP
   const onSubmit = (event) => {
     event.preventDefault();
     const api = "http://localhost:5000/api/users/validCode";
@@ -53,6 +55,7 @@ const VerifyCode = () => {
     //     }
   };
   return (
+    // form to enter OTP
     <form onSubmit={onSubmit}>
       <Grid>
         <Paper elevation={8} style={backGroundStyle}>

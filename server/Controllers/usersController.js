@@ -1,3 +1,4 @@
+// Author: Created By: Sri Ramya Basam
 const Users1 = require('../Models/usersModel');
 const Codes1 = require('../Models/codesModel');
 
@@ -10,18 +11,7 @@ var transporter = nodemailer.createTransport({
   }
 });
 
-const createUser = async (request, response) => {
-  const { email, password, firstname, lastname } = request.body;
-  console.log(request.body  )
-  const user = new Users1({ email, password, firstname, lastname });
-  console.log(user)
-  try {
-    await user.save();
-    response.status(201).json(user);
-  } catch (err) {
-    response.status(400).json({ message: err.message });
-  }
-};
+
 
 const getUsers = async (request, response) => {
   try {
@@ -231,6 +221,19 @@ const sendEmail = async (request, response) => {
       response.status(200).json({message: "email sent"});
     }
   });
+};
+
+const createUser = async (request, response) => {
+  const { email, password, firstname, lastname } = request.body;
+  console.log(request.body  )
+  const user = new Users1({ email, password, firstname, lastname });
+  console.log(user)
+  try {
+    await user.save();
+    response.status(201).json(user);
+  } catch (err) {
+    response.status(400).json({ message: err.message });
+  }
 };
 
 const getUserNameFromEmail = async (emailId) => {

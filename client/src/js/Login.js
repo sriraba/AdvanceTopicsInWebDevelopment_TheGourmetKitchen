@@ -50,7 +50,7 @@ const Login = () => {
       email: email,
       password: password,
     };
-
+    // backend call to validate user login
     axios
       .post(api, userinfo)
       .then((response) => {
@@ -63,39 +63,12 @@ const Login = () => {
         window.location.reload();
       });
 
-    // const api = "http://localhost:80/api/users/validuser";
-    // const userinfo = { email : email, password : password};
-    // console.log(userinfo)
-    // axios.post(api,
-    //     userinfo,
-    // )
-    // .then((response) => {
-    //     console.log(response);
-    //     if (!response.status === 200) {
-    //         alert(response.data.message);
-    //         window.location.reload();
-    //         navigatePage('/')
-    //     }
-    //     else{
-    //         localStorage.setItem("user", response.data.type);
-    //         localStorage.setItem("email", email);
-    //         navigatePage('/home')
-    //     }
-    // } );
-
-    // if (email === 'ramya@gmail.com' && password === 'Qwer!234') {
-    //     navigatePage('/home')
-    // }
-    // else {
-    //     alert("Please provide valid details");
-    //     window.location.reload();
-    //     navigatePage('/')
-    // }
   };
 
   return (
       <Container>
       <Box>
+        {/* Form to allow user to login */}
           <form onSubmit={onSubmit} style={{padding: "1%"}}>
               <Paper elevation={8} style={backGroundStyle}>
                 <Typography variant="overline" display="block" gutterBottom>

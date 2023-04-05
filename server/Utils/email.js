@@ -1,3 +1,7 @@
+// Author: Created By: Sri Ramya Basam
+// Title: Send OTP through email from sriramyabasam0044@gmail.com
+// Availability: https://www.w3schools.com/nodejs/nodejs_email.asp
+
 const nodemailer = require("nodemailer");
 
 var transporter = nodemailer.createTransport({

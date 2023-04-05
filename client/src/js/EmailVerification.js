@@ -1,7 +1,7 @@
 /**
- * Title: Forgot password page
+ * Title: Email Verification on Forgot Password feature
  * Author: Sri Ramya Basam
- * Date: 2023/02/20
+ * Date: 2023/03/30
  * Reference: https://mui.com/material-ui/getting-started/overview/,
  * https://levelup.gitconnected.com/how-to-create-a-navigation-bar-with-material-ui-9cbcfcec2570
  */

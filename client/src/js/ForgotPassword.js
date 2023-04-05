@@ -12,6 +12,7 @@ import { NavLink } from "react-router-dom";
 import { Typography } from "@mui/material";
 import axios from "axios";
 
+// Forgot password page where customer can provide new password
 const ForgotPassword = () => {
   const backGroundStyle = {
     padding: 20,

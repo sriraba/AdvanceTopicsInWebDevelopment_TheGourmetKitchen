@@ -58,33 +58,16 @@ const Signup = () => {
       firstname: firstname,
       lastname: lastname,
     };
-
-    // axios.post(api, {
-    //   headers: {
-    //       'Access-Control-Allow-Headers':'*',
-    //       'Content-Type': 'application/json',
-    //       'Access-Control-Allow-Origin':'*',
-    //       'Access-Control-Allow-Credentials':'true',
-    //       'Access-Control-Request-Method': 'POST'
-    //   },
-
-    // userinfo)
     console.log(userinfo);
-  //   axios.post(api, {
-  //     headers: {
-  //       'Access-Control-Allow-Headers':'*',
-  //       'Content-Type': 'application/json',
-  //       'Access-Control-Allow-Origin':'*',
-  //       'Access-Control-Allow-Credentials':'true',
-  //       'Access-Control-Request-Method': 'POST'
-  //     },
-  //     userinfo
-  // })
+  
+  // backend call to store user data
   axios.post(api, userinfo).then((response) => {
       console.log(response);
     });
     navigation("/home");
   };
+  
+  // First name validation
   const handleFirstNameInput = (event) => {
     console.log(event.target.value);
     if (event.target.value) {
@@ -97,6 +80,7 @@ const Signup = () => {
     setFirstName(event.target.value);
   };
 
+  // last name validation
   const handleLastNameInput = (event) => {
     console.log(event.target.value);
     if (event.target.value) {
@@ -109,6 +93,7 @@ const Signup = () => {
     setLastName(event.target.value);
   };
 
+  // Email validations
   const handleEmailInput = (event) => {
     console.log(event.target.value);
     if (event.target.value) {
@@ -121,6 +106,7 @@ const Signup = () => {
     setEmail(event.target.value);
   };
 
+  // Password format validation
   const handlePasswordInput = (event) => {
     console.log(event.target.value);
     const passwordValue = event.target.value.trim();
@@ -147,6 +133,7 @@ const Signup = () => {
     setPassword(event.target.value);
   };
 
+
   const handleConfirmPasswordInput = (event) => {
     if (event.target.value) {
       password === event.target.value
@@ -159,6 +146,7 @@ const Signup = () => {
   };
 
   return (
+    // Form to collect user information
     <form onSubmit={onSubmit}>
       <Grid>
         <Paper elevation={8} style={backGroundStyle}>

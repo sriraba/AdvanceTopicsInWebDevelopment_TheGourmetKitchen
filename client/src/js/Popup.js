@@ -1,5 +1,5 @@
 /**
- * Title: popup page
+ * Title: popup page for confirming account deletion
  * Author: Sri Ramya Basam
  * Date: 2023/02/26
  * Reference: https://mui.com/material-ui/getting-started/overview/
@@ -37,6 +37,8 @@ export default function Popup(props) {
     const userinfo = {
       email: localStorage.getItem("email")
     };
+    
+    // backend call to delete account on user confirmation
     axios
     .post(api, userinfo)
     .then((response) => {

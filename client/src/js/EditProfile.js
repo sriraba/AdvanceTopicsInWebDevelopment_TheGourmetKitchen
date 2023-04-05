@@ -31,6 +31,7 @@ const EditProfile = () => {
       lastname: lastname
 
     };
+    // backend call to update user information
     axios
       .post(api, userinfo)
       .then((response) => {

@@ -1,3 +1,4 @@
+// Author: Created By: Sri Ramya Basam
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({

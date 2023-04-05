@@ -16,6 +16,7 @@ import Navbar from './Display_Menu/components/Navbar';
 import SideDrawer from './Display_Menu/components/SideDrawer';
 import Backdrop from './Display_Menu/components/Backdrop';
 
+// Profile page with edit profile and delete profile options that customers choose from
 const Profile = () => {
 
   const [open, setOpen] = useState(false);
