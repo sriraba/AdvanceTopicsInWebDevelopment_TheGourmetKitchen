@@ -24,7 +24,8 @@ const EmailVerification = () => {
   const navigatePage = useNavigate();
   const onSubmit = (event) => {
     event.preventDefault();
-    const api = "http://localhost:5000/api/users/sendCode";
+    // const api = "http://localhost:5000/api/users/sendCode";
+    const api = "https://the-gourmet-kitchen.onrender.com/api/users/sendCode"; 
     const userinfo = {
       email: email
     };
