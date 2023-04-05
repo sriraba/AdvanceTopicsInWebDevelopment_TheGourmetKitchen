@@ -6,25 +6,25 @@ const menuData = [
     description:
       "Private Events organized by us provides variety of menus which are customizable. We try to make your Event delightful by our food.",
     price: 499,
-    countInStock: 5,
+    countInStock: 1,
   },
   {
     name: "Meal Combo - Veg",
     imageUrl:
       "https://www.bitesbee.com/wp-content/uploads/2021/09/Chicken-Rara-Jeera-Rice-_-Butter-Naan.png",
     description:
-      "Meal combo Vegeterian is food combo",
+      "This meal plan is designed to provide a diverse and exciting dining experience, with a different menu presented each day. The dishes included in this plan are selected from a rotating selection of options, ensuring that each meal is a delightful and surprising experience.",
     price: 99,
-    countInStock: 5,
+    countInStock: 10,
   },
   {
-    name: "Meal Combo - Meat <",
+    name: "Meal Combo - Meat",
     imageUrl:
       "https://bjsrestaurants.scene7.com/is/image/bjsrestaurants/catering-pizzacombo-36r-1",
     description:
-      "Meal Combo Meat",
+      "This meal plan is designed to provide a diverse and exciting dining experience, with a different menu presented each day. The dishes included in this plan are selected from a rotating selection of options, ensuring that each meal is a delightful and surprising experience.",
     price: 99,
-    countInStock: 5,
+    countInStock: 10,
   },
   {
     name: "Weddings",
@@ -33,7 +33,7 @@ const menuData = [
     description:
       "Weddings organized by us provides variety of menus which are customizable. We try to make your Wedding delightful and memorable by our food.",
     price: 799,
-    countInStock: 5,
+    countInStock: 1,
   },
   {
     name: "Indian Catering",
@@ -42,7 +42,7 @@ const menuData = [
     description:
       "Indian organized by us provides variety of menus which are customizable. We try to make your Event delightful by serving the Indian Authencicate food.",
     price: 699,
-    countInStock: 5,
+    countInStock: 1,
   },
   {
     name: "Corporate",
@@ -51,7 +51,7 @@ const menuData = [
     description:
       "Private Events organized by us provides variety of menus which are customizable. We try to make your Event delightful by our food.",
     price: 399,
-    countInStock: 5,
+    countInStock: 1,
   },
 ];
 
