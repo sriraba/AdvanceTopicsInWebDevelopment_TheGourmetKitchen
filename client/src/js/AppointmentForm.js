@@ -7,26 +7,35 @@ import {
   CardContent,
   Typography,
 } from "@mui/material";
+import axios from "axios";
 import { TimePicker } from "@mui/lab";
 import { useNavigate } from "react-router-dom";
-import Header from "./Header";
+import MenuItem from "@mui/material/MenuItem";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
 import Footer from "./Footer";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 //import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
-
+import Navbar from "./Display_Menu/components/Navbar";
+import { $CombinedState } from "redux";
 
 function AppointmentForm() {
+  const [options, setOptions] = useState([]);
+  const [selectedOption, setSelectedOption] = useState("");
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
-  const [datetime, setdatetime] = useState("");
+  const [date, setdate] = useState("");
   const [fErrorMessage, setFnErrorMessage] = useState();
   const [lErrorMessage, setLnErrorMessage] = useState();
   const [time, setTime] = useState("");
+
   const [emailErrorMessage, setEmailErrorMessage] = useState();
   const [numberErrorMessage, setNumberErrorMessage] = useState();
 
@@ -46,8 +55,26 @@ function AppointmentForm() {
     setValue(newValue);
   };
 
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
+    console.log({ firstname, lastname, email, number, message, date, time });
+    const offset = date.$d.getTimezoneOffset();
+    date.$d = new Date(date.$d.getTime() - offset * 60 * 1000);
+    let finaldate = date.$d.toISOString().split("T")[0];
+    let appointmentdata = {
+      firstName: firstname,
+      lastName: lastname,
+      email: email,
+      phoneNumber: number,
+      date: finaldate,
+      time: time,
+      description: message,
+    };
+    await axios
+      .post("http://localhost:5000/api/appointment", appointmentdata)
+      .then((res) => {});
+
+    navigation("/");
   };
   const handleFirstNameInput = (event) => {
     console.log(event.target.value);
@@ -87,9 +114,7 @@ function AppointmentForm() {
   const handleNumber = (event) => {
     console.log(event.target.value);
     if (event.target.value) {
-      setEmail(event.target.value);
-    } else {
-      setEmailErrorMessage(EMPTY_FIELD);
+      setNumber(event.target.value);
     }
   };
   const handleMessage = (event) => {
@@ -100,24 +125,33 @@ function AppointmentForm() {
       setNumberErrorMessage(Number);
     }
   };
-  const handleDate = (event) => {
-    console.log(event.target.value);
-    if (event.target.value) {
-      setTime(event.target.value);
-    } else {
-      setNumberErrorMessage(Date_Error);
-    }
+  const handleDate = async (value) => {
+    setdate(value);
+    const offset = value.$d.getTimezoneOffset();
+    value.$d = new Date(value.$d.getTime() - offset * 60 * 1000);
+    let date = value.$d.toISOString().split("T")[0];
+    await axios
+      .get(`http://localhost:5000/api/appointment/timeslot?date=${date}`)
+      .then((res) => {
+        // console.log(res.data.data.);
+        let allValues = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+        let filteredValues = allValues.filter(
+          (value) => !res.data.data.availableTimeslot.includes(value)
+        );
+        setOptions(filteredValues);
+      });
+  };
+  const handletimechange = (event) => {
+    setTime(event.target.value);
   };
 
   return (
     <div>
-      <Header />
+      <Navbar />
 
       <Grid>
-
-        <Card
-          style={{ maxWidth: 500, padding: "1% 1%", margin: "3% auto" }}
-        ><Typography gutterBottom variant="h5" align="center">
+        <Card style={{ maxWidth: 500, padding: "1% 1%", margin: "3% auto" }}>
+          <Typography gutterBottom variant="h5" align="center">
             Appointment Form
           </Typography>
           <CardContent>
@@ -133,6 +167,7 @@ function AppointmentForm() {
                     error={fErrorMessage}
                     helperText={fErrorMessage}
                     variant="outlined"
+                    required
                   />
                 </Grid>
                 <Grid xs={12} sm={6} item>
@@ -145,6 +180,7 @@ function AppointmentForm() {
                     error={fErrorMessage}
                     helperText={fErrorMessage}
                     onChange={handleLastNameInput}
+                    required
                   />
                 </Grid>
                 <Grid item xs={32}>
@@ -158,11 +194,13 @@ function AppointmentForm() {
                     error={fErrorMessage}
                     helperText={fErrorMessage}
                     onChange={handleEmailInput}
+                    required
                   />
+                  <p style={{ color: "Red" }}>{emailErrorMessage}</p>
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    type="number"
+                    type="string"
                     placeholder="Enter phone number"
                     label="Phone"
                     variant="outlined"
@@ -171,6 +209,7 @@ function AppointmentForm() {
                     error={fErrorMessage}
                     helperText={fErrorMessage}
                     onChange={handleNumber}
+                    required
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -185,6 +224,7 @@ function AppointmentForm() {
                     error={fErrorMessage}
                     helperText={fErrorMessage}
                     onChange={handleMessage}
+                    required
                   />
                 </Grid>
 
@@ -206,7 +246,7 @@ function AppointmentForm() {
                       label="Date desktop"
                       inputFormat="MM/DD/YYYY"
                       onChange={handleDate}
-                      value={value}
+                      value={date}
                       error={fErrorMessage}
                       helperText={fErrorMessage}
                       renderInput={(params) => <TextField {...params} />}
@@ -215,6 +255,51 @@ function AppointmentForm() {
                   <LocalizationProvider
                     dateAdapter={AdapterDayjs}
                   ></LocalizationProvider>
+                  <Box sx={{ minWidth: 110 }}>
+                    <FormControl fullWidth>
+                      <InputLabel id="demo-simple-select-label">
+                        Time
+                      </InputLabel>
+                      <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={time}
+                        label="Age"
+                        onChange={handletimechange}
+                        required
+                      >
+                        {
+                          /* <MenuItem id="9" value={9}>
+                          9 Am
+                        </MenuItem>
+                        <MenuItem id="10" value={10}>
+                          10 Am
+                        </MenuItem>
+                        <MenuItem id="11" value={11}>
+                          11 Am
+                        </MenuItem>
+                        <MenuItem id="12" value={12}>
+                          12 Pm
+                        </MenuItem>
+                        <MenuItem id="13" value={13}>
+                          1 Pm
+                        </MenuItem>
+                        <MenuItem id="14" value={14}>
+                          2 Pm
+                        </MenuItem>
+                        <MenuItem id="15" value={15}>
+                          3 Pm
+                        </MenuItem> */
+
+                          options.map((option) => (
+                            <MenuItem key={option} value={option}>
+                              {option}
+                            </MenuItem>
+                          ))
+                        }
+                      </Select>
+                    </FormControl>
+                  </Box>
                 </Grid>
                 <Grid item xs={12}>
                   <Button
@@ -232,7 +317,10 @@ function AppointmentForm() {
           </CardContent>
         </Card>
       </Grid>
-      <div style={{ position: 'absolute', bottom: '0px', width: '100%' }}> <Footer />  </div>
+      <div style={{ position: "absolute", bottom: "0px", width: "100%" }}>
+        {" "}
+        <Footer />{" "}
+      </div>
     </div>
   );
 }

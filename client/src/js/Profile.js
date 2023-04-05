@@ -7,21 +7,24 @@
 import React, { useState } from 'react';
 import { Grid } from "@material-ui/core";
 import { useNavigate } from 'react-router-dom';
-import Header from './Header';
 import Footer from './Footer';
 import Popup from './Popup';
 import { Button } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import Navbar from './Display_Menu/components/Navbar';
+import SideDrawer from './Display_Menu/components/SideDrawer';
+import Backdrop from './Display_Menu/components/Backdrop';
 
+// Profile page with edit profile and delete profile options that customers choose from
 const Profile = () => {
 
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const [openPopup, setOpenPopup] = useState(false)
+
   const editProfile = () => {
     setOpen(true);
-    localStorage.clear();
     navigate('/editProfile');
   };
   const deleteProfile = () => {
@@ -29,9 +32,13 @@ const Profile = () => {
     // navigate('/');    
   };
 
+
+  const [sideToggle, setSideToggle] = useState(false);
   return (
     <div className="App">
-      <Header />
+      <Navbar click={() => setSideToggle(true)} />
+      <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
+      <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <br></br>
       <Grid style={{ marginLeft: "5%" }}>
         <Button variant="outlined" startIcon={<EditIcon />} onClick={editProfile}>Edit Profile</Button>
