@@ -29,7 +29,7 @@ const HomeScreen = () => {
       <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
       <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <div className="homescreen">
-        <h2 className="homescreen__title">Latest Products</h2>
+        <h2 className="homescreen__title">Menus and Services</h2>
         <div className="homescreen__products">
           {loading ? (
             <h2>Loading...</h2>
