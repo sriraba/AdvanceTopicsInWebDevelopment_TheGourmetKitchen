@@ -154,7 +154,7 @@ const Signup = () => {
           </Typography>
           <img
             src="images/logo.png"
-            style={{ height: "50%", width: "100%" }}
+            style={{ height: "50%", width: "100%", marginBottom: "5%" }}
             alt="logo"
           />
           <TextField

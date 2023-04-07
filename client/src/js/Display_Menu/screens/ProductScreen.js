@@ -12,6 +12,7 @@ import Backdrop from "../components/Backdrop";
 import { getProductDetails } from "../redux/actions/productActions";
 import { addToCart } from "../redux/actions/cartActions";
 import FeedBack from "../../Feedback/FeedBack";
+import Footer from "../../Footer";
 
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1);
@@ -91,6 +92,7 @@ const ProductScreen = ({ match, history }) => {
         )}
       </div>
       <FeedBack unique = {id} />
+      <Footer />
     </div>
   );
 };

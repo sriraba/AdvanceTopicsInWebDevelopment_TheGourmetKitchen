@@ -7,6 +7,7 @@ import Product from "../components/Product";
 import Navbar from "../components/Navbar";
 import SideDrawer from "../components/SideDrawer";
 import Backdrop from "../components/Backdrop";
+import Footer from "../../Footer";
 
 //Actions
 import { getProducts as listProducts } from "../redux/actions/productActions";
@@ -24,7 +25,7 @@ const HomeScreen = () => {
   const [sideToggle, setSideToggle] = useState(false);
 
   return (
-    <div>
+    <div style={{ minHeight: '100vh' }}>
       <Navbar click={() => setSideToggle(true)} />
       <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
       <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
@@ -49,6 +50,7 @@ const HomeScreen = () => {
           )}
         </div>
       </div>
+      <div style={{ position: 'absolute', bottom: '0px', width: '100%' }} > <Footer />  </div>
     </div>
   );
 };
