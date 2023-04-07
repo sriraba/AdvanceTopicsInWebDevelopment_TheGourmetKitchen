@@ -6,8 +6,7 @@
  */
 
 import React, { useState } from "react";
-import { Grid, Paper, TextField, Button } from '@material-ui/core'
-import { InputLabel } from '@material-ui/core';
+import { Button, Grid, InputLabel, Paper, TextField } from '@mui/material';
 import Footer from './Footer';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";

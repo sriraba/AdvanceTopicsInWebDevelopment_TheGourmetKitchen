@@ -8,9 +8,8 @@
  */
 
 import React, { useState } from "react";
-import { Grid, Paper, TextField, Button } from "@material-ui/core";
 import { NavLink, useNavigate } from "react-router-dom";
-import { InputLabel, Typography } from "@mui/material";
+import { Button, Grid, InputLabel, Paper, TextField, Typography } from "@mui/material";
 import axios from "axios";
 
 const Signup = () => {
@@ -39,7 +38,7 @@ const Signup = () => {
   const CONFIRM_PASSWORD_MATCH = "Confirm password is not matched";
   const NO_ERROR = "";
   const ALPHABET_REGEX = /^[a-zA-Z]+$/;
-  const EMAIL_REGEX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  const EMAIL_REGEX = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const LOWER_CASE_REGEX = /(?=.*?[a-z])/;
   const MIN_LENGTH_REGEX = /.{8,}/;
   const UPPER_CASE_REGEX = /(?=.*?[A-Z])/;

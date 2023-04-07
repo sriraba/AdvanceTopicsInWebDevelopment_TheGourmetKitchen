@@ -6,10 +6,9 @@
  * https://levelup.gitconnected.com/how-to-create-a-navigation-bar-with-material-ui-9cbcfcec2570
  */
 import React, { useState } from "react";
-import { Grid, Paper, TextField, Button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { Typography } from "@mui/material";
+import { Button, Grid, Paper, TextField, Typography } from "@mui/material";
 import axios from "axios";
 
 // Forgot password page where customer can provide new password

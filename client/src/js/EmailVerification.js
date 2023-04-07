@@ -6,10 +6,8 @@
  * https://levelup.gitconnected.com/how-to-create-a-navigation-bar-with-material-ui-9cbcfcec2570
  */
 import React, { useState } from "react";
-import { Grid, Paper, TextField, Button } from "@material-ui/core";
+import { Button, Grid, Paper, Tab, TextField } from '@mui/material';
 import { useNavigate } from "react-router-dom";
-import { NavLink } from "react-router-dom";
-import Tab from "@material-ui/core/Tab";
 import axios from "axios";
 
 const EmailVerification = () => {

@@ -8,11 +8,9 @@
  */
 
 import React, { useState } from "react";
-import { Paper, TextField, Button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
-import { InputLabel } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Button, Container, InputLabel, Paper, TextField, Typography } from "@mui/material";
 import axios from "axios";
 
 const Login = () => {
@@ -20,7 +18,7 @@ const Login = () => {
     padding: 20,
     height: "auto",
     width: 280,
-    margin: "15% auto",
+    margin: "10% auto",
   };
   const buttonstyle = { margin: "9px 0" };
   const [email, setEmail] = useState("");
@@ -76,7 +74,7 @@ const Login = () => {
                 </Typography>
                 <img
                   src="images/logo.png"
-                  style={{ height: "50%", width: "100%" }}
+                  style={{ height: "50%", width: "100%", marginBottom: "5%" }}
                   alt="logo"
                 />
                 <TextField
