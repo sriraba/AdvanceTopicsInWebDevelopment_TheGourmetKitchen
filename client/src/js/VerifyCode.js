@@ -8,8 +8,6 @@
 import React, { useState } from "react";
 import { Grid, Paper, TextField, Button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
-import { NavLink } from "react-router-dom";
-import Tab from "@material-ui/core/Tab";
 import axios from "axios";
 
 const VerifyCode = () => {
