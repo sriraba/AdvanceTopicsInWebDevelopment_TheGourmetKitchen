@@ -1,4 +1,5 @@
 // Author: Created By: Sri Ramya Basam
+const jwt = require("jsonwebtoken");
 const Users1 = require('../Models/usersModel');
 const Codes1 = require('../Models/codesModel');
 
@@ -39,7 +40,13 @@ const validUser = async (request, response) => {
       return response.status(400).json({ error:"yes", message: 'User not found' });
     }
     if (userFiltered[0].email === user.email && userFiltered[0].password === user.password) {
-      return response.status(200).json({  error:"no", message: 'Login Success' });
+      const jwttoken = jwt.sign(user, "ZXCVB", { expiresIn: "1h" });
+      console.log(jwttoken)
+      response.cookie("token", jwttoken, { httpOnly: true });
+      response.status(200).json({  error:"no", message: 'Login Success' });
+      console.log(response);
+      return response;
+      // return response.status(200).json({  error:"no", message: 'Login Success' });
     } else {
       return response.status(400).json({  error:"yes", message: 'Password Incorrect'});
     }

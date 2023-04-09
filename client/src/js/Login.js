@@ -8,7 +8,7 @@
  * https://mui.com/material-ui/getting-started/templates/
  */
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import {
@@ -22,6 +22,7 @@ import {
   Typography,
 } from "@mui/material";
 import axios from "axios";
+import ApiAuthentication from './ApiAuthentication';
 
 const Login = () => {
   const backGroundStyle = {
@@ -30,6 +31,7 @@ const Login = () => {
     width: 350,
     margin: "10% auto",
   };
+  const authApi = useContext(ApiAuthentication);
   const buttonstyle = { margin: "9px 0" };
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -63,6 +65,7 @@ const Login = () => {
       .then((response) => {
         console.log(response);
         localStorage.setItem("email", email);
+        authApi.setAuth(true);
         navigatePage("/home");
       })
       .catch((error) => {
