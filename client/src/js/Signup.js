@@ -5,6 +5,7 @@
  * Reference: https://mui.com/material-ui/getting-started/overview/,
  * https://www.regexlib.com/Search.aspx?k=email&AspxAutoDetectCookieSupport=1
  * https://codingstatus.com/password-and-confirm-password-validation-in-react-js/
+ * https://mui.com/material-ui/getting-started/templates/
  */
 
 import React, { useState } from "react";
@@ -16,7 +17,7 @@ const Signup = () => {
   const backGroundStyle = {
     padding: 20,
     height: "auto",
-    width: 280,
+    width: 350,
     margin: "5% auto",
   };
   const buttonstyle = { margin: "8px 0" };
@@ -146,6 +147,24 @@ const Signup = () => {
 
   return (
     // Form to collect user information
+    <Grid container component="main" sx={{ height: "100vh" }}>
+      <Grid
+        item
+        xs={false}
+        sm={4}
+        md={7}
+        sx={{
+          backgroundImage: "url(images/food.jpg)",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: (t) =>
+            t.palette.mode === "light"
+              ? t.palette.grey[50]
+              : t.palette.grey[900],
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
     <form onSubmit={onSubmit}>
       <Grid>
         <Paper elevation={8} style={backGroundStyle}>
@@ -226,6 +245,8 @@ const Signup = () => {
         </Paper>
       </Grid>
     </form>
+    </Grid>
+    </Grid>
   );
 };
 
