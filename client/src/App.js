@@ -16,6 +16,7 @@ import { EmailVerification } from "./js/EmailVerification";
 import { VerifyCode } from "./js/VerifyCode";
 import ApiAuthentication from "./js/ApiAuthentication";
 import AuthenticateRoute from "./js/AuthenticateRoute";
+import Payment from "./js/Payment/Payment";
 
 function App() {
   const [auth, setAuth] = useState(false);
@@ -38,6 +39,7 @@ function App() {
           <Route path="/menuItems/:id" element={<ProductScreen />} />
           <Route path="/collectemail" element={<EmailVerification />} />
           <Route path="/verifycode" element={<VerifyCode />} />
+          <Route path="/payment" element={<Payment />} />
         </Routes>
       </ApiAuthentication.Provider>
     </BrowserRouter>

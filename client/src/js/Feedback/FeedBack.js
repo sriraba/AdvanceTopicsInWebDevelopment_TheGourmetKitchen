@@ -1,4 +1,11 @@
-// Author: Aneri Shah (B00912616)
+// Author: Aneri Shah
+// Feature: Feedback(Ratings & Review)
+// Overall References:
+// MUI: https://mui.com/
+// React Bootstrap: https://react-bootstrap.github.io/
+// React: https://react.dev/
+// NPM Libraries: https://www.npmjs.com/
+// React Router DOM: https://reactrouter.com/en/main
 
 
 import { Box, Button, Card, Grid, Rating, TextField, Typography } from '@mui/material';
@@ -93,6 +100,9 @@ const FeedBack = () => {
       </Typography>
       <Box>
         <Typography component="legend">Rate the plan</Typography>
+
+        {/* https://mui.com/material-ui/react-rating/ */}
+
         <p><Rating value={ratingValue} onChange={(e, val) => { setFeedback({ ...feedback, rating: val }) }} /></p>
         <Grid>
           <Row>
@@ -120,6 +130,7 @@ const FeedBack = () => {
             <Row>
               <Col sm={11}>
                 <Typography variant='h6'>{feedback.userId}</Typography>
+                {/* https://mui.com/material-ui/react-rating/ */}
                 <Rating value={feedback.rating} readOnly></Rating>
                 <Typography variant="subtitle2" gutterBottom component="div">
                   <p>{feedback.feedback}</p>

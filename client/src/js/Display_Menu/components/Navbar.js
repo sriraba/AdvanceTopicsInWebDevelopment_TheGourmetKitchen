@@ -40,7 +40,7 @@ const Navbar = ({ click }) => {
                 <Dropdown.Menu>
                   <Dropdown.Item href="/profile">Profile</Dropdown.Item>
                   <Dropdown.Item href="/appointmentform">
-                    Services
+                    Appointment
                   </Dropdown.Item>
                   <Dropdown.Item href="/">Logout</Dropdown.Item>
                 </Dropdown.Menu>

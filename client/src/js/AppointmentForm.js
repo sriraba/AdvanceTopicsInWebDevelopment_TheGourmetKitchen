@@ -1,3 +1,12 @@
+// Author: Dhruvit Raval (Backend) Aneri Shah (Design/UI) 
+// Feature: Apppointment Form (main - dhruvit)
+// Overall References:
+// MUI: https://mui.com/
+// React Bootstrap: https://react-bootstrap.github.io/
+// React: https://react.dev/
+// NPM Libraries: https://www.npmjs.com/
+// React Router DOM: https://reactrouter.com/en/main
+
 import React, { useState } from "react";
 import { Grid, TextField, Button, Card, CardContent, Typography, Box, FormControl, InputLabel, Select, MenuItem, Paper } from "@mui/material";
 import axios from "axios";
@@ -63,8 +72,9 @@ function AppointmentForm() {
     await axios
       .post("http://localhost:5000/api/appointment", appointmentdata)
       .then((res) => { });
-
-    navigation("/");
+    
+    window.alert("Apppointment Booking Succesfull!")
+    navigation("/home");
   };
   const handleFirstNameInput = (event) => {
     console.log(event.target.value);
