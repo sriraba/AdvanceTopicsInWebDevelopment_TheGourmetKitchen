@@ -11,7 +11,7 @@ const menuData = [
   {
     name: "Meal Combo - Veg",
     imageUrl:
-      "https://res.cloudinary.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/x7bm4aoiaetwqcxqkban",
+      "https://thaistreet.ae/wp-content/uploads/2023/01/Combo-1-to-combo-4-2.jpg",
     description:
       "This meal plan is designed to provide a diverse and exciting dining experience, with a different menu presented each day. The dishes included in this plan are selected from a rotating selection of options, ensuring that each meal is a delightful and surprising experience.",
     price: 99,
