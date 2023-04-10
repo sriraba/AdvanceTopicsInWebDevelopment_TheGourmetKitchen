@@ -37,7 +37,7 @@ const FeedBack = () => {
   const handleFeedback = async () => {
     await axios({
       method: "PUT",
-      url: `/api/feedback/add`,
+      url: `https://the-gourmet-kitchen.onrender.com/api/feedback/add`,
       headers: {
         "Content-Type": "application/json",
       },
@@ -54,7 +54,7 @@ const FeedBack = () => {
       params: {
         id: id
       },
-      url: `/api/feedback/course/${id}`,
+      url: `https://the-gourmet-kitchen.onrender.com/api/feedback/course/${id}`,
       headers: {
         "Content-Type": "application/json",
       },
@@ -70,7 +70,7 @@ const FeedBack = () => {
       params: {
         email: username
       },
-      url: `/api/feedback/email/${username}`,
+      url: `https://the-gourmet-kitchen.onrender.com/api/feedback/email/${username}`,
       headers: {
         "Content-Type": "application/json",
       },

@@ -10,7 +10,7 @@
 
 
 import React, { useState } from "react";
-import { TextField, Button, Typography, Stepper, Step, StepLabel, Paper, Alert, AlertTitle } from "@mui/material";
+import { TextField, Button, Typography, Stepper, Step, StepLabel, Paper } from "@mui/material";
 import Navbar from "../Display_Menu/components/Navbar";
 import SideDrawer from "../Display_Menu/components/SideDrawer";
 import Backdrop from "../Display_Menu/components/Backdrop";
@@ -207,6 +207,7 @@ const Payment = () => {
                     )}
                 </Paper>
             </div>
+            <div style={{ position: 'absolute', bottom: '0px', width: '100%' }} > <Footer />  </div>
         </div>
     );
 };

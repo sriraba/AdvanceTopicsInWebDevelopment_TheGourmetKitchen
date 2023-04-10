@@ -1,9 +1,6 @@
 import "./SideDrawer.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { Dropdown } from "react-bootstrap";
-import { AppBar, Badge, Box, Grid, Toolbar } from "@mui/material";
 
 const SideDrawer = ({ show, click }) => {
   const sideDrawerClass = ["sidedrawer"];

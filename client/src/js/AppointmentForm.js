@@ -8,7 +8,7 @@
 // React Router DOM: https://reactrouter.com/en/main
 
 import React, { useState } from "react";
-import { Grid, TextField, Button, Card, CardContent, Typography, Box, FormControl, InputLabel, Select, MenuItem, Paper } from "@mui/material";
+import { Grid, TextField, Button, CardContent, Typography, Box, FormControl, InputLabel, Select, MenuItem, Paper } from "@mui/material";
 import axios from "axios";
 import { TimePicker } from "@mui/lab";
 import { useNavigate } from "react-router-dom";
@@ -71,7 +71,7 @@ function AppointmentForm() {
     };
     // http://localhost:5000/api/appointment
     await axios
-      .post("http://localhost:5000/api/appointment", appointmentdata)
+      .post("https://the-gourmet-kitchen.onrender.com/api/appointment", appointmentdata)
       .then((res) => { });
     
     window.alert("Apppointment Booking Succesfull!")
@@ -317,7 +317,7 @@ function AppointmentForm() {
           </CardContent>
         </Paper>
       </Grid>
-      <Footer style={{ zIndex: 1 }} />
+      <div style={{ position: 'absolute', bottom: '0px', width: '100%' }} > <Footer />  </div>
     </div>
   );
 }

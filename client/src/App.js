@@ -17,7 +17,6 @@ import { VerifyCode } from "./js/VerifyCode";
 import ApiAuthentication from "./js/ApiAuthentication";
 import AuthenticateRoute from "./js/AuthenticateRoute";
 import Payment from "./js/Payment/Payment";
-import Footer from "./js/Footer";
 
 function App() {
   const [auth, setAuth] = useState(false);
@@ -29,20 +28,19 @@ function App() {
           <Route path="/description" element={<Description />} />
           <Route path="/" element={<Login />} />
           <Route element={<AuthenticateRoute />}>
-            <Route element={<HomeScreen />} path="/home" exact />            
-          </Route>         
+            <Route element={<HomeScreen />} path="/home" exact />
+          </Route>
           <Route path="/profile" element={<Profile />} />
           <Route path="/editProfile" element={<EditProfile />} />
           <Route path="/appointmentform" element={<AppointmentForm />} />
           <Route path="/cart" element={<CartScreen />} />
+          <Route path="/payment" element={<Payment />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
           <Route path="/menuItems/:id" element={<ProductScreen />} />
           <Route path="/collectemail" element={<EmailVerification />} />
           <Route path="/verifycode" element={<VerifyCode />} />
-          <Route path="/payment" element={<Payment />} />
         </Routes>
-        <Footer />
       </ApiAuthentication.Provider>
     </BrowserRouter>
   );

@@ -50,6 +50,7 @@ const HomeScreen = () => {
           )}
         </div>
       </div>
+      <Footer style={{ zIndex: 1 }} />
     </div>
   );
 };
