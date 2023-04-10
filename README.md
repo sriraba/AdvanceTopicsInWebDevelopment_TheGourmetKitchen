@@ -42,7 +42,7 @@ Welcome to our React JS project! "The Gourmet Kitchen" is a web app that caters 
 
 
 3. Backend (server) setup steps
-    - Go to the server directory
+    - Go to the server directory (or open the backend deployement link)
         >- `cd server`
         >- `node index.js`
 
@@ -57,11 +57,11 @@ Welcome to our React JS project! "The Gourmet Kitchen" is a web app that caters 
 
 Also you can access the deployed version of our web application using this link: 
 
-- *[The Gourmet Kitchen](https://deft-cupcake-92e3bf.netlify.app)*
+- *[The Gourmet Kitchen](https://the-gourmetkitchen.netlify.app/)*
 
-- *[Gitlab Respository](https://git.cs.dal.ca/avshah/csci5193_technology_innovation_group3/-/tree/development)*
+- *[Gitlab Respository](https://git.cs.dal.ca/basam/group16_csci5709)*
 
-- *[Back-End Deployment](https://www.youtube.com/watch?v=LmDaDbqvCJg)*
+- *[Back-End Deployment](https://the-gourmet-kitchen.onrender.com/)*
 
 ---
 
