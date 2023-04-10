@@ -1,26 +1,25 @@
+// Author: Dhruvit Raval (Backend) Aneri Shah (Design/UI) 
+// Feature: Apppointment Form (main - dhruvit)
+// Overall References:
+// MUI: https://mui.com/
+// React Bootstrap: https://react-bootstrap.github.io/
+// React: https://react.dev/
+// NPM Libraries: https://www.npmjs.com/
+// React Router DOM: https://reactrouter.com/en/main
+
 import React, { useState } from "react";
-import {
-  Grid,
-  TextField,
-  Button,
-  Card,
-  CardContent,
-  Typography,
-} from "@mui/material";
+import { Grid, TextField, Button, CardContent, Typography, Box, FormControl, InputLabel, Select, MenuItem, Paper } from "@mui/material";
 import axios from "axios";
 import { TimePicker } from "@mui/lab";
 import { useNavigate } from "react-router-dom";
-import MenuItem from "@mui/material/MenuItem";
-import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
 import Footer from "./Footer";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 //import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import Navbar from "./Display_Menu/components/Navbar";
+import SideDrawer from "./Display_Menu/components/SideDrawer";
+import Backdrop from "./Display_Menu/components/Backdrop";
 import { $CombinedState } from "redux";
 
 function AppointmentForm() {
@@ -70,11 +69,13 @@ function AppointmentForm() {
       time: time,
       description: message,
     };
+    // http://localhost:5000/api/appointment
     await axios
-      .post("http://localhost:5000/api/appointment", appointmentdata)
-      .then((res) => {});
-
-    navigation("/");
+      .post("https://the-gourmet-kitchen.onrender.com/api/appointment", appointmentdata)
+      .then((res) => { });
+    
+    window.alert("Apppointment Booking Succesfull!")
+    navigation("/home");
   };
   const handleFirstNameInput = (event) => {
     console.log(event.target.value);
@@ -131,7 +132,7 @@ function AppointmentForm() {
     value.$d = new Date(value.$d.getTime() - offset * 60 * 1000);
     let date = value.$d.toISOString().split("T")[0];
     await axios
-      .get(`http://localhost:5000/api/appointment/timeslot?date=${date}`)
+      .get(`https://the-gourmet-kitchen.onrender.com/api/appointment/timeslot?date=${date}`)
       .then((res) => {
         // console.log(res.data.data.);
         let allValues = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
@@ -145,12 +146,18 @@ function AppointmentForm() {
     setTime(event.target.value);
   };
 
+  const [sideToggle, setSideToggle] = useState(false);
+
   return (
-    <div>
-      <Navbar />
+    <div style={{ minHeight: '100vh' }}>
+      <div>
+        <Navbar click={() => setSideToggle(true)} />
+        <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
+        <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
+      </div>
 
       <Grid>
-        <Card style={{ maxWidth: 500, padding: "1% 1%", margin: "3% auto" }}>
+        <Paper elevation={8} style={{ maxWidth: 500, padding: "1% 1%", margin: "2% auto" }}>
           <Typography gutterBottom variant="h5" align="center">
             Appointment Form
           </Typography>
@@ -228,13 +235,8 @@ function AppointmentForm() {
                   />
                 </Grid>
 
-                <Grid item xs={12} sm={6}>
-                  <TimePicker
-                    label="Time"
-                    value={setTime}
-                    onChange={handleChange}
-                    renderInput={(params) => <TextField {...params} />}
-                  />
+                <Grid item display="flex" justifyContent="space-between">
+                  <TimePicker label="Time" value={setTime} onChange={handleChange} renderInput={(params) => <TextField {...params} />} />
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     {/* <DateTimePicker
                     renderInput={(props) => <TextField {...props} />}
@@ -249,13 +251,11 @@ function AppointmentForm() {
                       value={date}
                       error={fErrorMessage}
                       helperText={fErrorMessage}
-                      renderInput={(params) => <TextField {...params} />}
+                      renderInput={(params) => <TextField sx={{marginRight: "5%"}} {...params} />}
                     />
                   </LocalizationProvider>
-                  <LocalizationProvider
-                    dateAdapter={AdapterDayjs}
-                  ></LocalizationProvider>
-                  <Box sx={{ minWidth: 110 }}>
+                  <LocalizationProvider dateAdapter={AdapterDayjs}></LocalizationProvider>
+                  <Box sx={{ width: "50%" }}>
                     <FormControl fullWidth>
                       <InputLabel id="demo-simple-select-label">
                         Time
@@ -315,12 +315,9 @@ function AppointmentForm() {
               </Grid>
             </form>
           </CardContent>
-        </Card>
+        </Paper>
       </Grid>
-      <div style={{ position: "absolute", bottom: "0px", width: "100%" }}>
-        {" "}
-        <Footer />{" "}
-      </div>
+      <div style={{ position: 'absolute', bottom: '0px', width: '100%' }} > <Footer />  </div>
     </div>
   );
 }

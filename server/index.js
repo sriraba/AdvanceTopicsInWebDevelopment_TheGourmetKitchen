@@ -6,6 +6,7 @@ const dbConnection = require("./DBConnection/db");
 const usersRouter = require("./Routes/usersRoute");
 const feedRoute = require("./Routes/feedRoute");
 const appointmentRouter = require("./Routes/appointmentRoute");
+var cookieParser = require("cookie-parser");
 
 const cors = require("cors");
 
@@ -21,6 +22,8 @@ const corsOptions = {
 };
 // app.use(corsOptions);
 app.use(cors(corsOptions));
+
+app.use(cookieParser());
 
 // Add the body-parser middleware to parse incoming request bodies
 // app.use(bodyParser.json());

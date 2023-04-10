@@ -6,38 +6,25 @@
  */
 
 import React from 'react'
-import { Dialog, DialogTitle, DialogContent, makeStyles, Typography } from '@material-ui/core';
-import { Button } from '@material-ui/core';
+import { Button, Dialog, DialogContent, DialogTitle, Typography } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 const buttonstyle = { margin: '8px 0' }
 
 
-
-const popupStyles = makeStyles(theme => ({
-    popupWrapper: {
-        padding: theme.spacing(3),
-        position: 'absolute',
-        top: theme.spacing(6)
-    },
-    popupTitle: {
-        paddingRight: '0px'
-    }
-}))
-
 export default function Popup(props) {
     const { message, openPopupWindow, setOpenPopupWindow } = props;
-    const classes = popupStyles();
     const navigatePage = useNavigate(); 
 
     const handledelete = () => {
 
-        const api = "http://localhost:5000/api/users/delete";
+        // const api = "http://localhost:5000/api/users/delete";
+        const api = "https://the-gourmet-kitchen.onrender.com/api/users/delete"; 
         console.log(localStorage.getItem("email"))
     const userinfo = {
       email: localStorage.getItem("email")
     };
-    
+
     // backend call to delete account on user confirmation
     axios
     .post(api, userinfo)
@@ -57,8 +44,8 @@ export default function Popup(props) {
     };
 
     return (
-        <Dialog open={openPopupWindow} maxWidth="md" classes={{ paper: classes.popupWrapper }}>
-            <DialogTitle className={classes.popupTitle}>
+        <Dialog open={openPopupWindow} maxWidth="md" sx={{ padding: 3 , position: 'absolute', top: 3}}>
+            <DialogTitle sx={{paddingRight: '0px'}}>
                 <div style={{ display: 'flex' }}>
                     <Typography variant="h6" component="div" style={{ flexGrow: 1 }}>
                         {message}

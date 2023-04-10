@@ -6,10 +6,9 @@
  * https://levelup.gitconnected.com/how-to-create-a-navigation-bar-with-material-ui-9cbcfcec2570
  */
 import React, { useState } from "react";
-import { Grid, Paper, TextField, Button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { Typography } from "@mui/material";
+import { Button, Grid, Paper, TextField, Typography } from "@mui/material";
 import axios from "axios";
 
 // Forgot password page where customer can provide new password
@@ -26,7 +25,8 @@ const ForgotPassword = () => {
   const navigatePage = useNavigate();
   const onSubmit = (event) => {
     event.preventDefault();
-    const api = "http://localhost:5000/api/users/update";
+    // const api = "http://localhost:5000/api/users/update";
+    const api = "https://the-gourmet-kitchen.onrender.com/api/users/update"; 
     const userinfo = {
       email: localStorage.getItem("email"),
       password: password,
@@ -53,6 +53,24 @@ const ForgotPassword = () => {
     }
   };
   return (
+    <Grid container component="main" sx={{ height: "100vh" }}>
+      <Grid
+        item
+        xs={false}
+        sm={4}
+        md={7}
+        sx={{
+          backgroundImage: "url(images/food.jpg)",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: (t) =>
+            t.palette.mode === "light"
+              ? t.palette.grey[50]
+              : t.palette.grey[900],
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
     <form onSubmit={onSubmit}>
       <Grid>
         <Paper elevation={8} style={backGroundStyle}>
@@ -64,6 +82,7 @@ const ForgotPassword = () => {
             style={{ height: "50%", width: "100%" }}
             alt="logo"
           />
+          <br></br>      <br></br>
           <TextField
             label="Password"
             placeholder="Enter password"
@@ -73,6 +92,7 @@ const ForgotPassword = () => {
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           />
+                <br></br>      <br></br>
           <TextField
             label="Confirm Password"
             placeholder="Re-enter password"
@@ -99,6 +119,9 @@ const ForgotPassword = () => {
         </Paper>
       </Grid>
     </form>
+    </Grid>
+    </Grid>
+    
   );
 };
 

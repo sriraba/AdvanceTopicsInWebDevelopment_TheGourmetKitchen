@@ -1,7 +1,7 @@
 import "./ProductScreen.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 // Components
 import Navbar from "../components/Navbar";
@@ -12,6 +12,7 @@ import Backdrop from "../components/Backdrop";
 import { getProductDetails } from "../redux/actions/productActions";
 import { addToCart } from "../redux/actions/cartActions";
 import FeedBack from "../../Feedback/FeedBack";
+import Footer from "../../Footer";
 
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1);
@@ -29,7 +30,7 @@ const ProductScreen = ({ match, history }) => {
 
   const addToCartHandler = () => {
     dispatch(addToCart(product._id, qty));
-    history.push(`/cart`);
+    
   };
 
   const [sideToggle, setSideToggle] = useState(false);
@@ -46,8 +47,7 @@ const ProductScreen = ({ match, history }) => {
         ) : error ? (
           <h2>{error}</h2>
         ) : (
-          <>
-            
+          <> 
             <div className="productscreen__left">
               <div className="left__image" >
                 <img src={product.imageUrl} alt={product.name} style={{ maxWidth: 500 }} />
@@ -91,6 +91,7 @@ const ProductScreen = ({ match, history }) => {
         )}
       </div>
       <FeedBack unique = {id} />
+      <Footer style={{ zIndex: 1 }} />
     </div>
   );
 };

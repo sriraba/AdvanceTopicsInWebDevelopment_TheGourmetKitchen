@@ -6,8 +6,7 @@
  */
 
 import React, { useState } from "react";
-import { Grid, Paper, TextField, Button } from '@material-ui/core'
-import { InputLabel } from '@material-ui/core';
+import { Button, Grid, InputLabel, Paper, TextField } from '@mui/material';
 import Footer from './Footer';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +15,7 @@ import SideDrawer from "./Display_Menu/components/SideDrawer";
 import Backdrop from "./Display_Menu/components/Backdrop";
 
 const EditProfile = () => {
-  const backGroundStyle = { padding: 20, height: '40vh', width: 280, margin: "20px auto" }
+  const backGroundStyle = { padding: 20, height: 'auto', width: 280, margin: "20px auto" }
   const buttonstyle = { margin: '9px 0' }
   const [email, setEmail] = useState("");
   const [firstname, setFirstName] = useState("");
@@ -24,7 +23,8 @@ const EditProfile = () => {
   const navigatePage = useNavigate();
   const onSubmit = (event) => {
     event.preventDefault();
-    const api = "http://localhost:5000/api/users/updateprofile";
+    // const api = "http://localhost:5000/api/users/updateprofile";
+    const api = "https://the-gourmet-kitchen.onrender.com/api/users/updateprofile"; 
     const userinfo = {
       email: email,
       firstname: firstname,
@@ -54,18 +54,15 @@ const EditProfile = () => {
         <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       </div>
       <Grid>
-
         <Paper elevation={8} style={backGroundStyle}>
-          <InputLabel >Below details are editable !!!</InputLabel>
-          <TextField label='Email' placeholder='Enter email' fullWidth value={email} required onChange={(event) => setEmail(event.target.value)} />
-          <TextField label='First Name' placeholder='Enter first name' fullWidth value={firstname} required onChange={(event) => setFirstName(event.target.value)} />
-          <TextField label='Last Name' placeholder='Enter last name' fullWidth value={lastname} required onChange={(event) => setLastName(event.target.value)} />
-          <Button type='submit' color='primary' variant="contained" style={buttonstyle} fullWidth>SUBMIT</Button>
-          <br></br> <br></br>
+          <InputLabel sx={{mb: 2}} >Below details are editable !!!</InputLabel>
+          <TextField sx={{mb: 2}} label='Email' placeholder='Enter email' fullWidth value={email} required onChange={(event) => setEmail(event.target.value)} />
+          <TextField sx={{mb: 2}} label='First Name' placeholder='Enter first name' fullWidth value={firstname} required onChange={(event) => setFirstName(event.target.value)} />
+          <TextField sx={{mb: 1}} label='Last Name' placeholder='Enter last name' fullWidth value={lastname} required onChange={(event) => setLastName(event.target.value)} />
+          <Button sx={{mb: 2}} type='submit' color='primary' variant="contained" style={buttonstyle} fullWidth>SUBMIT</Button>
         </Paper>
       </Grid>
       <div style={{ position: 'absolute', bottom: '0px', width: '100%' }} > <Footer />  </div>
-
     </form>
 
 
