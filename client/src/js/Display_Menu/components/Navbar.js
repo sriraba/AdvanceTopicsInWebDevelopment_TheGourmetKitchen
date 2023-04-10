@@ -5,7 +5,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Dropdown } from "react-bootstrap";
 import { Grid, Typography } from "@mui/material";
 import React from "react";
-
+import Logo from "../../../Images/logo.png";
 
 const Navbar = ({ click }) => {
   const cart = useSelector((state) => state.cart);
@@ -17,8 +17,8 @@ const Navbar = ({ click }) => {
 
   return (
     <nav className="navbar">
-      <Link href="/home">
-        <img src="images/logo.png" alt="logo" style={{maxWidth: 200}} />
+      <Link to="/home">
+        <img src={Logo} alt="logo" style={{maxWidth: 200}} />
       </Link>
       <ul className="navbar__links">
         <li>

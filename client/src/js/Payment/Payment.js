@@ -207,7 +207,6 @@ const Payment = () => {
                     )}
                 </Paper>
             </div>
-            <div style={{ position: 'absolute', bottom: '0px', width: '100%' }} > <Footer />  </div>
         </div>
     );
 };

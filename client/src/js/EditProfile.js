@@ -63,8 +63,6 @@ const EditProfile = () => {
           <br></br> <br></br>
         </Paper>
       </Grid>
-      <div style={{ position: 'absolute', bottom: '0px', width: '100%' }} > <Footer />  </div>
-
     </form>
 
 

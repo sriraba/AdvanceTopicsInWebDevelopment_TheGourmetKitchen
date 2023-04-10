@@ -45,7 +45,6 @@ const Profile = () => {
         <Button variant="outlined" startIcon={<DeleteIcon />} onClick={deleteProfile}>Delete Account</Button>
       </Grid>
       <Popup message="Are you sure you want to delete?" openPopupWindow={openPopup} setOpenPopupWindow={setOpenPopup}> </Popup>
-      <div style={{ position: 'absolute', bottom: '0px', width: '100%' }}> <Footer />  </div>
     </div>
 
   );

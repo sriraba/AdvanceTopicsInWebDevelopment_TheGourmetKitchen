@@ -17,6 +17,7 @@ import { VerifyCode } from "./js/VerifyCode";
 import ApiAuthentication from "./js/ApiAuthentication";
 import AuthenticateRoute from "./js/AuthenticateRoute";
 import Payment from "./js/Payment/Payment";
+import Footer from "./js/Footer";
 
 function App() {
   const [auth, setAuth] = useState(false);
@@ -41,6 +42,7 @@ function App() {
           <Route path="/verifycode" element={<VerifyCode />} />
           <Route path="/payment" element={<Payment />} />
         </Routes>
+        <Footer />
       </ApiAuthentication.Provider>
     </BrowserRouter>
   );
