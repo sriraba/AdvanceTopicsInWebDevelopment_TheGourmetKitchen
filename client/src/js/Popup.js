@@ -18,12 +18,13 @@ export default function Popup(props) {
 
     const handledelete = () => {
 
-        const api = "http://localhost:5000/api/users/delete";
+        // const api = "http://localhost:5000/api/users/delete";
+        const api = "https://the-gourmet-kitchen.onrender.com/api/users/delete"; 
         console.log(localStorage.getItem("email"))
     const userinfo = {
       email: localStorage.getItem("email")
     };
-    
+
     // backend call to delete account on user confirmation
     axios
     .post(api, userinfo)

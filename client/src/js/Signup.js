@@ -51,7 +51,8 @@ const Signup = () => {
     localStorage.setItem("firstname", firstname);
     localStorage.setItem("lastname", lastname);
     localStorage.setItem("email", email);
-    const api = "http://localhost:5000/api/users/";
+    // const api = "http://localhost:5000/api/users/";
+    const api = "https://the-gourmet-kitchen.onrender.com/api/users/"; 
     const userinfo = {
       email: email,
       password: password,

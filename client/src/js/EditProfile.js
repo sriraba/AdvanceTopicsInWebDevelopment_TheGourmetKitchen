@@ -23,7 +23,8 @@ const EditProfile = () => {
   const navigatePage = useNavigate();
   const onSubmit = (event) => {
     event.preventDefault();
-    const api = "http://localhost:5000/api/users/updateprofile";
+    // const api = "http://localhost:5000/api/users/updateprofile";
+    const api = "https://the-gourmet-kitchen.onrender.com/api/users/updateprofile"; 
     const userinfo = {
       email: email,
       firstname: firstname,

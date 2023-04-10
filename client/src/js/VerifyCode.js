@@ -25,7 +25,8 @@ const VerifyCode = () => {
   // backend call to validate OTP
   const onSubmit = (event) => {
     event.preventDefault();
-    const api = "http://localhost:5000/api/users/validCode";
+    // const api = "http://localhost:5000/api/users/validCode";
+    const api = "https://the-gourmet-kitchen.onrender.com/api/users/validCode";   
     const userinfo = {
       email: localStorage.getItem("email"),
       code: code,

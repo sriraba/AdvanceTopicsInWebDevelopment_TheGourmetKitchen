@@ -25,7 +25,8 @@ const ForgotPassword = () => {
   const navigatePage = useNavigate();
   const onSubmit = (event) => {
     event.preventDefault();
-    const api = "http://localhost:5000/api/users/update";
+    // const api = "http://localhost:5000/api/users/update";
+    const api = "https://the-gourmet-kitchen.onrender.com/api/users/update"; 
     const userinfo = {
       email: localStorage.getItem("email"),
       password: password,
