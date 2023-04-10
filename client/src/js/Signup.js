@@ -5,19 +5,19 @@
  * Reference: https://mui.com/material-ui/getting-started/overview/,
  * https://www.regexlib.com/Search.aspx?k=email&AspxAutoDetectCookieSupport=1
  * https://codingstatus.com/password-and-confirm-password-validation-in-react-js/
+ * https://mui.com/material-ui/getting-started/templates/
  */
 
 import React, { useState } from "react";
-import { Grid, Paper, TextField, Button } from "@material-ui/core";
 import { NavLink, useNavigate } from "react-router-dom";
-import { InputLabel, Typography } from "@mui/material";
+import { Button, Grid, InputLabel, Paper, TextField, Typography } from "@mui/material";
 import axios from "axios";
 
 const Signup = () => {
   const backGroundStyle = {
     padding: 20,
     height: "auto",
-    width: 280,
+    width: 350,
     margin: "5% auto",
   };
   const buttonstyle = { margin: "8px 0" };
@@ -39,7 +39,7 @@ const Signup = () => {
   const CONFIRM_PASSWORD_MATCH = "Confirm password is not matched";
   const NO_ERROR = "";
   const ALPHABET_REGEX = /^[a-zA-Z]+$/;
-  const EMAIL_REGEX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  const EMAIL_REGEX = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const LOWER_CASE_REGEX = /(?=.*?[a-z])/;
   const MIN_LENGTH_REGEX = /.{8,}/;
   const UPPER_CASE_REGEX = /(?=.*?[A-Z])/;
@@ -148,6 +148,24 @@ const Signup = () => {
 
   return (
     // Form to collect user information
+    <Grid container component="main" sx={{ height: "100vh" }}>
+      <Grid
+        item
+        xs={false}
+        sm={4}
+        md={7}
+        sx={{
+          backgroundImage: "url(images/food.jpg)",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: (t) =>
+            t.palette.mode === "light"
+              ? t.palette.grey[50]
+              : t.palette.grey[900],
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
     <form onSubmit={onSubmit}>
       <Grid>
         <Paper elevation={8} style={backGroundStyle}>
@@ -156,7 +174,7 @@ const Signup = () => {
           </Typography>
           <img
             src="images/logo.png"
-            style={{ height: "50%", width: "100%" }}
+            style={{ height: "50%", width: "100%", marginBottom: "5%" }}
             alt="logo"
           />
           <TextField
@@ -228,6 +246,8 @@ const Signup = () => {
         </Paper>
       </Grid>
     </form>
+    </Grid>
+    </Grid>
   );
 };
 

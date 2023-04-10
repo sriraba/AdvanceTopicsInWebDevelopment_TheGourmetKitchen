@@ -5,11 +5,10 @@
  * Availability: https://mui.com/material-ui/getting-started/overview/, https://codesandbox.io/s/50l225l964?file=/src/index.js:608-1288
  */
 import React, { useState } from 'react';
-import { Grid } from "@material-ui/core";
 import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 import Popup from './Popup';
-import { Button } from '@mui/material';
+import { Button, Grid } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import Navbar from './Display_Menu/components/Navbar';
@@ -46,7 +45,6 @@ const Profile = () => {
         <Button variant="outlined" startIcon={<DeleteIcon />} onClick={deleteProfile}>Delete Account</Button>
       </Grid>
       <Popup message="Are you sure you want to delete?" openPopupWindow={openPopup} setOpenPopupWindow={setOpenPopup}> </Popup>
-      <div style={{ position: 'absolute', bottom: '0px', width: '100%' }}> <Footer />  </div>
     </div>
 
   );

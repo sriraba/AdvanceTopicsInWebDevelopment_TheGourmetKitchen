@@ -6,8 +6,7 @@
  */
 
 import React, { useState } from "react";
-import { Grid, Paper, TextField, Button } from '@material-ui/core'
-import { InputLabel } from '@material-ui/core';
+import { Button, Grid, InputLabel, Paper, TextField } from '@mui/material';
 import Footer from './Footer';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -65,8 +64,6 @@ const EditProfile = () => {
           <br></br> <br></br>
         </Paper>
       </Grid>
-      <div style={{ position: 'absolute', bottom: '0px', width: '100%' }} > <Footer />  </div>
-
     </form>
 
 

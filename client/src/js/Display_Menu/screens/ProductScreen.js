@@ -29,7 +29,7 @@ const ProductScreen = ({ match, history }) => {
 
   const addToCartHandler = () => {
     dispatch(addToCart(product._id, qty));
-    history.push(`/cart`);
+    
   };
 
   const [sideToggle, setSideToggle] = useState(false);
@@ -46,8 +46,7 @@ const ProductScreen = ({ match, history }) => {
         ) : error ? (
           <h2>{error}</h2>
         ) : (
-          <>
-            
+          <> 
             <div className="productscreen__left">
               <div className="left__image" >
                 <img src={product.imageUrl} alt={product.name} style={{ maxWidth: 500 }} />

@@ -8,6 +8,7 @@ import CartItem from "../components/CartItem";
 import Navbar from "../components/Navbar";
 import SideDrawer from "../components/SideDrawer";
 import Backdrop from "../components/Backdrop";
+import Footer from "../../Footer";
 
 import { addToCart, removeFromCart } from "../redux/actions/cartActions";
 
@@ -40,7 +41,7 @@ const CartScreen = () => {
   const [sideToggle, setSideToggle] = useState(false);
 
   return (
-    <div>
+    <div style={{ minHeight: '100vh' }}>
       <Navbar click={() => setSideToggle(true)} />
       <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
       <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
@@ -72,7 +73,7 @@ const CartScreen = () => {
               <p>${getCartSubTotal()}</p>
             </div>
             <div>
-              <button>Proceed To Checkout</button>
+              <button><Link to="/payment" style={{color: "white", textDecoration: "none"}}>Proceed To Checkout</Link></button>
             </div>
           </div>
         </div>

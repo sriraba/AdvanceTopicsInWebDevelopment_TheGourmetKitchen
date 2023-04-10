@@ -6,16 +6,15 @@
  * https://levelup.gitconnected.com/how-to-create-a-navigation-bar-with-material-ui-9cbcfcec2570
  */
 import React, { useState } from "react";
-import { Grid, Paper, TextField, Button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
-import { NavLink } from "react-router-dom";
-import Tab from "@material-ui/core/Tab";
+import { Button, Grid, Paper, TextField,Tab } from "@mui/material";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 const VerifyCode = () => {
   const backGroundStyle = {
     padding: 20,
-    height: "40vh",
+    height: "60vh",
     width: 280,
     margin: "20px auto",
   };
@@ -57,12 +56,38 @@ const VerifyCode = () => {
   };
   return (
     // form to enter OTP
+    <Grid container component="main" sx={{ height: "100vh" }}>
+      <Grid
+        item
+        xs={false}
+        sm={4}
+        md={7}
+        sx={{
+          backgroundImage: "url(images/food.jpg)",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: (t) =>
+            t.palette.mode === "light"
+              ? t.palette.grey[50]
+              : t.palette.grey[900],
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
     <form onSubmit={onSubmit}>
       <Grid>
         <Paper elevation={8} style={backGroundStyle}>
-          {/* <Tab label="Please enter the code" /> */}
+
+          
+          <Tab label="Enter code sent to your email" />
+          <img
+            src="images/logo.png"
+            style={{ height: "30%", width: "100%" }}
+            alt="logo"
+          />
+          <br></br>      <br></br>
           <TextField
-            label="Enter code sent to your email"
+            label="Code"
             placeholder="Enter code"
             type="code"
             fullWidth
@@ -79,10 +104,16 @@ const VerifyCode = () => {
           >
             SUBMIT
           </Button>
-          <br></br> <br></br>
+          <br></br> 
+          <NavLink className="navbar-item" activeClassName="is-active" to="/">
+            {" "}
+            Exit
+          </NavLink>
         </Paper>
       </Grid>
     </form>
+    </Grid>
+    </Grid>
   );
 };
 

@@ -4,20 +4,21 @@
  * Date: 2023/03/30
  * Reference: https://mui.com/material-ui/getting-started/overview/,
  * https://levelup.gitconnected.com/how-to-create-a-navigation-bar-with-material-ui-9cbcfcec2570
+ * https://mui.com/material-ui/getting-started/templates/
  */
 import React, { useState } from "react";
-import { Grid, Paper, TextField, Button } from "@material-ui/core";
+import { Button, Grid, Paper, Tab, TextField } from '@mui/material';
 import { useNavigate } from "react-router-dom";
-import { NavLink } from "react-router-dom";
-import Tab from "@material-ui/core/Tab";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 const EmailVerification = () => {
   const backGroundStyle = {
     padding: 20,
-    height: "40vh",
-    width: 280,
+    height: "60vh",
+    width: 350,
     margin: "20px auto",
+
   };
   const buttonstyle = { margin: "9px 0" };
   const [email, setEmail] = useState("");
@@ -44,10 +45,34 @@ const EmailVerification = () => {
       });
   };
   return (
+    <Grid container component="main" sx={{ height: "100vh" }}>
+      <Grid
+        item
+        xs={false}
+        sm={4}
+        md={7}
+        sx={{
+          backgroundImage: "url(images/food.jpg)",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: (t) =>
+            t.palette.mode === "light"
+              ? t.palette.grey[50]
+              : t.palette.grey[900],
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
     <form onSubmit={onSubmit}>
       <Grid>
-        <Paper elevation={8} style={backGroundStyle}>
+        <Paper  elevation={8} style={backGroundStyle} >
           <Tab label="A verification code will be sent to the email" />
+          <img
+            src="images/logo.png"
+            style={{ height: "30%", width: "100%" }}
+            alt="logo"
+          />
+          <br></br>      <br></br>
           <TextField
             label="Enter Email"
             placeholder="Enter email"
@@ -66,10 +91,16 @@ const EmailVerification = () => {
           >
             SUBMIT
           </Button>
-          <br></br> <br></br>
+          <br></br> 
+          <NavLink className="navbar-item" activeClassName="is-active" to="/">
+            {" "}
+            Exit
+          </NavLink>
         </Paper>
       </Grid>
     </form>
+    </Grid>
+    </Grid>
   );
 };
 
