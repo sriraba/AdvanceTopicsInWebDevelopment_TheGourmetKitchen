@@ -5,13 +5,6 @@
 --- 
 
 ## **Members**
-| Name | Banner ID |  |
-| ----------- | ----------- | ----------- |
-| [Aneri Shah](an235252@dal.ca) | B00912616 | *(Maintainer)* |
-| [Purvisha Patel](pr542178@dal.ca) | B00912611 | *(Maintainer)* |
-| [Dhruvit Raval](dh343307@dal.ca) | B00902291 | *(Maintainer)* |
-| [Sri Ramya Basam](sr881461@dal.ca) | B00900307 | *(Maintainer)* |
-
 ---
 ## Table of Contents
 - [Introduction](#introduction)
